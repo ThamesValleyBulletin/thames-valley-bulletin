@@ -1,11 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Thames Valley Bulletin</title>
+    <title>Thames Valley Bulletin</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, Calibri, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C1C1C; /* fondo negro antracita */
+            color: #FFFFFF;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 2px solid #5A7D9A; /* línea azul grisácea */
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #FFFFFF;
+        }
+        header h2 {
+            font-size: 1.2em;
+            font-weight: normal;
+            color: #AABBD1; /* gris azulado */
+            margin-top: 10px;
+        }
+
+        /* Introductorio */
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+            line-height: 1.6em;
+            color: #CCCCCC;
+        }
+
+        /* Sección Bulletins */
+        .bulletins {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .bulletin {
+            background: linear-gradient(145deg, #4A4A4A, #2C2C2C); /* gris degradado */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .bulletin:hover {
+            transform: scale(1.05);
+        }
+        .bulletin h3 {
+            margin-top: 0;
+            color: #AABBD1; /* gris azulado */
+        }
+        .bulletin p {
+            color: #E0E0E0;
+        }
+
+        /* Sidebars */
+        .sidebars {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #2A2A2A;
+            border-radius: 5px;
+            color: #CCCCCC;
+            line-height: 1.4em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #5A7D9A;
+            font-size: 0.9em;
+            color: #888888;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to The Thames Valley Bulletin</h1>
-    <p>This site will publish FOI-based bulletins and investigations for the Thames Valley.</p>
+
+    <!-- Header -->
+    <header>
+        <h1>Thames Valley Bulletin</h1>
+        <h2>Bringing facts to the people of the Thames Valley with transparency and clarity</h2>
+    </header>
+
+    <!-- Texto introductorio -->
+    <div class="intro">
+        <p>This website aims to bring facts to the people of the Thames Valley without all the conjecture, abuse, PCC crime washing and mis information that comes with social media. The Freedom of Information Act, used in the right way, is a powerful tool that holds those that spend the taxes we give them, to account. However, some public authorities seem to think it does not apply to them. Content will be added as issues arise and may highlight irony so readers can come to their own conclusion over the right or wrong of what we have published.</p>
+    </div>
+
+    <!-- Botones / Bulletins -->
+    <div class="bulletins">
+        <div class="bulletin">
+            <h3>Bulletin #1</h3>
+            <p>Matthew Barber, Police and Crime commissioner for the Thames Valley</p>
+        </div>
+        <div class="bulletin">
+            <h3>Bulletin #2</h3>
+            <p>Environmental crime in South Oxfordshire</p>
+        </div>
+        <div class="bulletin">
+            <h3>Bulletin #3</h3>
+            <p>NHS waiting lists and Police investigations backlog</p>
+        </div>
+    </div>
+
+    <!-- Sidebars (resumen rápido) -->
+    <div class="sidebars">
+        <div class="sidebar">
+            Bulletin #1 - Matthew Barber, Police and Crime commissioner
+        </div>
+        <div class="sidebar">
+            Bulletin #2 - Environmental crime in South Oxfordshire
+        </div>
+        <div class="sidebar">
+            Bulletin #3 - NHS waiting lists and Police investigations backlog
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 The Thames Valley Bulletin
+    </footer>
+
 </body>
 </html>
