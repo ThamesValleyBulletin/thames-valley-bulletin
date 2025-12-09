@@ -22,7 +22,7 @@
         .logo {
             display: block;
             margin: 20px auto 10px auto;
-            width: 160px;
+            width: 450px; /* logo más grande */
             height: auto;
         }
 
@@ -41,13 +41,20 @@
             margin-top: 5px;
         }
 
-        /* LÍNEA SEPARADORA */
+        /* LÍNEA SEPARADORA DEBAJO DEL H1+H2 */
         .separator {
             width: 50%;
             max-width: 300px;
             height: 2px;
             background: #555;
             margin: 15px auto;
+        }
+
+        /* INTRO TEXT */
+        .intro {
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.6;
         }
 
         /* BOTONES BULLETINS */
@@ -63,11 +70,11 @@
         .bulletin-btn {
             background: linear-gradient(180deg, #4a5568, #2d3748);
             color: #e2e8f0;
-            padding: 15px 25px;
+            padding: 20px 30px; /* botones más grandes */
             border-radius: 8px;
             text-decoration: none;
             font-size: 1rem;
-            width: 220px;
+            width: 250px; /* ancho mayor */
             text-align: center;
             transition: 0.3s;
         }
@@ -77,11 +84,17 @@
             transform: translateY(-3px);
         }
 
-        /* INTRO TEXT */
-        .intro {
-            text-align: center;
-            margin: 20px 0;
-            line-height: 1.6;
+        /* Titular y subtitulo dentro del botón */
+        .bulletin-number {
+            font-size: 0.9rem; /* más pequeño */
+            display: block;
+            margin-bottom: 5px;
+            color: #cbd5e0;
+        }
+
+        .main-title {
+            font-size: 1.1rem; /* más grande que bulletin # */
+            font-weight: bold;
         }
 
         /* SIDEBARS RESUMEN */
@@ -101,8 +114,8 @@
 
         <!-- TITULOS -->
         <h1>The Thames Valley Bulletin</h1>
-        <div class="separator"></div>
         <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
+        <div class="separator"></div>
 
         <!-- INTRO TEXT -->
         <p class="intro">
@@ -111,9 +124,18 @@
 
         <!-- BOTONES BULLETINS -->
         <div class="bulletin-buttons">
-            <a href="#bulletin1" class="bulletin-btn">Bulletin #1<br><small>Matthew Barber, Police and Crime commissioner</small></a>
-            <a href="#bulletin2" class="bulletin-btn">Bulletin #2<br><small>Environmental crime in South Oxfordshire</small></a>
-            <a href="#bulletin3" class="bulletin-btn">Bulletin #3<br><small>Police waiting lists analysis</small></a>
+            <a href="#bulletin1" class="bulletin-btn">
+                <span class="bulletin-number">Bulletin #1</span>
+                <span class="main-title">Matthew Barber, Police and Crime commissioner for the Thames Valley</span>
+            </a>
+            <a href="#bulletin2" class="bulletin-btn">
+                <span class="bulletin-number">Bulletin #2</span>
+                <span class="main-title">Environmental crime in South Oxfordshire</span>
+            </a>
+            <a href="#bulletin3" class="bulletin-btn">
+                <span class="bulletin-number">Bulletin #3</span>
+                <span class="main-title">Police waiting lists analysis</span>
+            </a>
         </div>
 
         <!-- EJEMPLO SIDEBAR RESUMEN -->
