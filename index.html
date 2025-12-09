@@ -1,276 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>THE THAMES VALLEY BULLETIN</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin:0;
-        padding:0;
-        background-color:#f7f7f7;
-        color:#1a202c;
-    }
-    header {
-        text-align:center;
-        padding:20px;
-    }
-    header img {
-        width:150px;
-        height:auto;
-    }
-    h1 {
-        font-size:36px;
-        color:#e2e8f0;
-        font-weight:bold;
-        margin:10px 0;
-    }
-    h2 {
-        font-size:28px;
-        color:#a0c4e2;
-        font-weight:normal;
-        margin:5px 0;
-    }
-    .separator {
-        width:80%;
-        height:2px;
-        background-color:#cacbcd;
-        margin:15px auto;
-    }
-    .wrapper {
-        display:flex;
-        justify-content:center;
-        align-items:flex-start;
-        gap:30px;
-        padding:20px;
-        flex-wrap: wrap;
-    }
-    .content {
-        flex:1;
-        max-width:800px;
-    }
-    .intro {
-        text-align:center;
-        text-align:justify;
-        font-size:16px;
-        margin-bottom:20px;
-    }
-    .intro b {
-        color:#1a202c;
-    }
-    .buttons {
-        display:flex;
-        justify-content:center;
-        gap:15px;
-        margin-bottom:20px;
-        flex-wrap: wrap;
-    }
-    .buttons .btn {
-        flex:1;
-        max-width:200px;
-        padding:15px;
-        background:linear-gradient(to bottom, #cbd5e0, #e2e8f0);
-        border-radius:12px;
-        text-align:center;
-        color:#1a202c;
-    }
-    .buttons .btn .bulletin {
-        font-size:14px;
-        font-weight:normal;
-        display:block;
-    }
-    .buttons .btn .title {
-        font-size:16px;
-        font-weight:bold;
-        display:block;
-    }
-    .sidebar {
-        flex:0 0 260px;
-        position:sticky;
-        top:100px;
-        display:flex;
-        flex-direction:column;
-        gap:15px;
-    }
-    .slider-card {
-        padding:15px;
-        border-radius:12px;
-        background:linear-gradient(to bottom, #cbd5e0, #e2e8f0);
-        text-align:center;
-    }
-    .slider-card .bulletin {
-        font-size:14px;
-        font-weight:normal;
-    }
-    .slider-card .title {
-        font-size:16px;
-        font-weight:bold;
-        margin:5px 0;
-    }
-    .slider-card .view-more {
-        margin-top:10px;
-        padding:8px 12px;
-        background-color:#a0c4e2;
-        color:white;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-    }
-    .bulletin-box {
-        margin-bottom:30px;
-        border-radius:12px;
-        background:linear-gradient(to bottom, #e2e8f0, #f1f5f9);
-        padding:20px;
-    }
-    .bulletin-box .bulletin-label {
-        display:inline-block;
-        background-color:#a0c4e2;
-        color:white;
-        padding:5px 10px;
-        border-radius:8px;
-        margin-bottom:10px;
-        font-weight:bold;
-    }
-    .bulletin-box h3 {
-        font-weight:bold;
-        color:#cbd5e0;
-        margin:5px 0;
-        font-size:20px;
-    }
-    .bulletin-box .subtitle {
-        font-weight:normal;
-        color:#a0c4e2;
-        margin-bottom:15px;
-        font-size:16px;
-    }
-    .bulletin-box .text {
-        font-size:15px;
-        line-height:1.5;
-        margin-bottom:15px;
-    }
-    .bulletin-box .text b {
-        color:#1a202c;
-    }
-    table {
-        width:100%;
-        border-collapse:collapse;
-        margin-bottom:15px;
-    }
-    table th {
-        background-color:#a0c4e2;
-        color:white;
-        padding:5px;
-    }
-    table td {
-        border:1px solid #cacbcd;
-        padding:5px;
-        text-align:center;
-    }
-    .bulletin-box .conclusion {
-        font-size:16px;
-        font-weight:bold;
-        color:#1a202c;
-    }
-    @media(max-width:1024px){
-        .wrapper{
-            flex-direction:column;
-            align-items:center;
+    <meta charset="UTF-8">
+    <title>The Thames Valley Bulletin</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e2e8f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .sidebar{
-            position:relative;
-            top:auto;
-            width:100%;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
         }
-    }
-</style>
+        .main-content {
+            flex: 3;
+        }
+        .sidebar {
+            flex: 1;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header img {
+            width: 300px;
+            height: 300px;
+        }
+        h1 {
+            color: #e2e8f0;
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+        h2 {
+            color: #a0c4e2;
+            font-size: 1.5rem;
+            margin: 5px 0;
+        }
+        .separator {
+            height: 2px;
+            background-color: #cacbcd;
+            width: 60%;
+            margin: 10px auto 20px auto;
+        }
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .intro p {
+            text-align: justify;
+            font-size: 1rem;
+        }
+        .intro p strong {
+            font-weight: bold;
+        }
+        .buttons-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .bulletin-button {
+            background: linear-gradient(135deg, #6b7280, #3b82f6);
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            text-align: center;
+            min-width: 220px;
+        }
+        .bulletin-button .bulletin-number {
+            font-size: 0.9rem;
+        }
+        .bulletin-button .bulletin-title {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .sidebar .slider-entry {
+            background: linear-gradient(135deg, #6b7280, #3b82f6);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+        .slider-entry .bulletin-number {
+            font-size: 0.9rem;
+        }
+        .slider-entry .bulletin-title {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .slider-entry button {
+            margin-top: 10px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bulletin {
+            background: linear-gradient(135deg, #374151, #1f2937);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        .bulletin .bulletin-top {
+            background-color: #3b82f6;
+            border-radius: 10px;
+            width: fit-content;
+            padding: 5px 10px;
+            color: white;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .bulletin h3 {
+            color: #cbd5e0;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .bulletin .subtitle {
+            color: #a0c4e2;
+            margin: 5px 0 15px 0;
+        }
+        .bulletin p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .bulletin table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        .bulletin table, .bulletin th, .bulletin td {
+            border: 1px solid #cacbcd;
+        }
+        .bulletin th {
+            background-color: #2563eb;
+            color: white;
+            padding: 5px;
+        }
+        .bulletin td {
+            padding: 5px;
+        }
+        .conclusion {
+            color: #2563eb;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <img src="the-thames-valley-bulletin-WB.png" alt="Logo">
-    <h1>THE THAMES VALLEY BULLETIN</h1>
-    <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
-    <div class="separator"></div>
-</header>
-<div class="wrapper">
-    <div class="content">
-        <div class="intro">
-            This website aims to bring facts to the people of the <b>Thames Valley</b> without all the <b>conjecture, abuse, PCC crime washing, misinformation</b> that comes with social media. The <b>Freedom of Information Act</b>, used correctly, is a powerful tool that holds those spending taxpayer money to account.
-        </div>
-        <div class="buttons">
-            <div class="btn"><span class="bulletin">Bulletin #1</span><span class="title">Matthew Barber, Police and Crime commissioner for the Thames Valley</span></div>
-            <div class="btn"><span class="bulletin">Bulletin #2</span><span class="title">Environmental crime in South Oxfordshire</span></div>
-            <div class="btn"><span class="bulletin">Bulletin #3</span><span class="title">Police waiting lists analysis</span></div>
+    <header>
+        <img src="the-thame-valley-bulletin-WB.png" alt="Logo">
+        <h1>THE THAMES VALLEY BULLETIN</h1>
+        <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
+        <div class="separator"></div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="intro">
+                <p>
+                    This website aims to bring facts to the people of the <strong>Thames Valley</strong> without all the <strong>conjecture</strong>, <strong>abuse</strong>, <strong>PCC crime washing</strong> and <strong>misinformation</strong> that comes with social media. The <strong>Freedom of Information Act</strong>, used correctly, is a powerful tool that holds those spending taxpayer money to account.
+                </p>
+            </div>
+
+            <!-- Botones centrales -->
+            <div class="buttons-row">
+                <div class="bulletin-button">
+                    <div class="bulletin-number">Bulletin #1</div>
+                    <div class="bulletin-title">Matthew Barber, Police and Crime commissioner for the Thames Valley</div>
+                </div>
+                <div class="bulletin-button">
+                    <div class="bulletin-number">Bulletin #2</div>
+                    <div class="bulletin-title">Environmental crime in South Oxfordshire</div>
+                </div>
+                <div class="bulletin-button">
+                    <div class="bulletin-number">Bulletin #3</div>
+                    <div class="bulletin-title">Police waiting lists analysis</div>
+                </div>
+            </div>
+
+            <!-- Bulletin #1 -->
+            <div class="bulletin">
+                <div class="bulletin-top">Bulletin #1</div>
+                <h3>Matthew Barber, Police and Crime commissioner for the Thames Valley</h3>
+                <div class="subtitle">Transparency and taxpayer accountability in APCC payments</div>
+                <p>
+                    The <strong>Association of Police and Crime Commissioners</strong> has 33 PCCs as members and is registered as a member’s club. A FOI act request was sent to this organisation all of who's 33 members are public servant asking to see a copy of their full accounts. This request was refused. The <strong>Information Commissioner’s Office</strong> upheld this stating that under the FOI act a member’s club was not required to respond. A FOI request was sent to <strong>Matthew Barber</strong> asking how much he had paid over the past 5 years in membership fees to his members club, out of taxpayers funds.
+                </p>
+                <p>
+                    Considering the substantial nature of these payments a FOI request was sent to Matthew Barber asking him to supply a copy of the full <strong>APCC accounts</strong> as, being a member, he would be issued with them on an annual basis to sign off. He would want to know how <strong>Thames Valley taxpayers’ money was being spent</strong>. To date he has refused to answer the request but he did attend the National Rural Crime Network’s “<strong>Rural Crime conference</strong>” this year. It was held at …. wait for it .. the very rural and inexpensive, and centrally located .. setting of …. the <strong>Directors in Pall Mall</strong>.
+                </p>
+                <table>
+                    <tr>
+                        <th>Year</th>
+                        <th>Amount (£)</th>
+                    </tr>
+                    <tr><td>2021/22</td><td>33,387.54</td></tr>
+                    <tr><td>2022/23</td><td>2,000.00</td></tr>
+                    <tr><td>2023/24</td><td>41,762.79</td></tr>
+                    <tr><td>2024/25</td><td>51,500.00</td></tr>
+                    <tr><td>2025/25</td><td>52,445.00</td></tr>
+                </table>
+                <p class="conclusion">
+                    CONCLUSION: In our opinion, for transparency <strong>Matthew Barber</strong> should supply a copy of the full accounts of the APCC for the past 5 years so <strong>Thames Valley taxpayers</strong> can see how their money is being accounted for. Otherwise, he should arrange for all membership fees to be returned for the use of the <strong>Chief Constable of the Thames Valley</strong> to employ more officers to investigate crime.
+                </p>
+            </div>
+
+            <!-- Bulletin #2 -->
+            <div class="bulletin">
+                <div class="bulletin-top">Bulletin #2</div>
+                <h3>Environmental crime in South Oxfordshire</h3>
+                <div class="subtitle">Up next time, watch this space</div>
+                <p>
+                    Bulletin #2 will include a picture of an environmental crime involving an estimated 250 lorries of landfill, that has taken place in South Oxfordshire, can be clearly seen on Google Earth and which neither the Environment agency nor Oxford County Council have prosecuted. The crime is technically fly tipping, anything from shovelling mud into a stream to throwing a bottle out a car window to what has been seen this week in the news (20/11/2025). Yet it would have raised £1/4 million in landfill tax as it infilled the flood plain where all waste can be toxic so would have been at the highest rate and as a result residents of Cholsey may expect more flooding this year.
+                </p>
+            </div>
+
+            <!-- Bulletin #3 -->
+            <div class="bulletin">
+                <div class="bulletin-top">Bulletin #3</div>
+                <h3>Police waiting lists analysis</h3>
+                <div class="subtitle">Up next time, watch this space</div>
+                <p>
+                    We have all heard of NHS waiting lists. It is a basic business performance indicator and the NHS knows on a shift basis how many beds will become available and how many patients we waiting. Matthew Hogg Chief Constable of the Thames Valley claims not to know how many crimes have been reported to which there are no investigating officers available to investigate them. Yet frontline officers refer to very long waiting lists when challenged. A national FOI survey will show the true extent of how stretched front-line officers are in a summary of Police Waiting lists.
+                </p>
+            </div>
         </div>
 
-        <!-- Bulletin 1 -->
-        <div class="bulletin-box">
-            <div class="bulletin-label">Bulletin #1</div>
-            <h3>Matthew Barber, Police and Crime commissioner for the Thames Valley</h3>
-            <div class="subtitle">Transparency and taxpayer accountability in APCC payments</div>
-            <div class="text">
-                The <b>Association of Police and Crime Commissioners</b> has 33 PCCs as members and is registered as a member’s club. 
-                A FOI act request was sent to this organisation all of who's 33 members are <b>public servant</b> asking to see a copy of their full accounts. This request was refused.
-                The <b>Information Commissioner’s Office</b> upheld this stating that under the FOI act a member’s club was not required to respond.
-                A FOI request was sent to <b>Matthew Barber</b> asking how much he had paid over the past 5 years in membership fees to his members club, out of taxpayers funds. He responded:
-                Considering the substantial nature of these payments a FOI request was sent to <b>Matthew Barber</b> asking him to supply a copy of the full <b>APCC accounts</b> as, being a member, he would be issued with them on an annual basis to sign off. He would want to know how <b>Thames Valley taxpayers’ money was being spent</b>.
-                To date he has refused to answer the request but he did attend the National Rural Crime Network’s <b>“Rural Crime conference”</b> this year. It was held at …. wait for it .. the very rural and inexpensive, and centrally located .. setting of …. the <b>Directors in Pall Mall</b>.
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="slider-entry">
+                <div class="bulletin-number">Bulletin #1</div>
+                <div class="bulletin-title">Matthew Barber, Police and Crime commissioner</div>
+                <button>View More</button>
             </div>
-            <table>
-                <tr><th>Year</th><th>Amount (£)</th></tr>
-                <tr><td>2021/22</td><td>33,387.54</td></tr>
-                <tr><td>2022/23</td><td>2,000.00</td></tr>
-                <tr><td>2023/24</td><td>41,762.79</td></tr>
-                <tr><td>2024/25</td><td>51,500.00</td></tr>
-                <tr><td>2025/25</td><td>52,445.00</td></tr>
-            </table>
-            <div class="conclusion">
-                CONCLUSION: In our opinion, for transparency <b>Matthew Barber</b> should supply a copy of the full accounts of the APCC for the past 5 years so <b>Thames Valley taxpayers</b> can see how their money is being accounted for. Otherwise, he should arrange for all membership fees to be returned for the use of the <b>Chief Constable of the Thames Valley</b> to employ more officers to investigate crime.
+            <div class="slider-entry">
+                <div class="bulletin-number">Bulletin #2</div>
+                <div class="bulletin-title">Environmental crime in South Oxfordshire</div>
+                <button>View More</button>
+            </div>
+            <div class="slider-entry">
+                <div class="bulletin-number">Bulletin #3</div>
+                <div class="bulletin-title">Police waiting lists analysis</div>
+                <button>View More</button>
             </div>
         </div>
-
-        <!-- Bulletin 2 -->
-        <div class="bulletin-box">
-            <div class="bulletin-label">Bulletin #2</div>
-            <h3>Environmental crime in South Oxfordshire</h3>
-            <div class="subtitle">Up next time, watch this space</div>
-            <div class="text">
-                Bulletin #2 will include a picture of an environmental crime involving an estimated 250 lorries of land fill, that has taken place in South Oxfordshire, can be clearly seen on Google Earth and which neither the Environment agency nor Oxford County Council have prosecuted.
-                The crime is technically fly tipping, anything from shovelling mud into a stream to throwing a bottle out a car window to what has been seen this week in the news (20/11/2025). Yet it would have raised £1/4 million in landfill tax as it infilled the flood plain where all waste can be toxic so would have been at the highest rate and as a result residents of Cholsey may expect more flooding this year.
-            </div>
-        </div>
-
-        <!-- Bulletin 3 -->
-        <div class="bulletin-box">
-            <div class="bulletin-label">Bulletin #3</div>
-            <h3>Police waiting lists analysis</h3>
-            <div class="subtitle">Up next time, watch this space</div>
-            <div class="text">
-                We have all heard of NHS waiting lists. It is a basic business performance indicator and the NHS knows on a shift basis how many beds will become available and how many patients we waiting.
-                <b>Matthew Hogg</b>, Chief Constable of the Thames Valley claims not to know how many crimes have been reported to which there are no investigating officers available to investigate them. Yet frontline officers refer to very long waiting lists when challenged.
-                A national FOI survey will show the true extent of how stretched front-line officers are in a summary of Police Waiting lists.
-            </div>
-        </div>
-
     </div>
-
-    <aside class="sidebar">
-        <div class="slider-card">
-            <span class="bulletin">Bulletin #1</span>
-            <span class="title">Matthew Barber, Police and Crime commissioner</span>
-            <button class="view-more">View More</button>
-        </div>
-        <div class="slider-card">
-            <span class="bulletin">Bulletin #2</span>
-            <span class="title">Environmental crime in South Oxfordshire</span>
-            <button class="view-more">View More</button>
-        </div>
-        <div class="slider-card">
-            <span class="bulletin">Bulletin #3</span>
-            <span class="title">Police waiting lists analysis</span>
-            <button class="view-more">View More</button>
-        </div>
-    </aside>
-</div>
 </body>
 </html>
 
