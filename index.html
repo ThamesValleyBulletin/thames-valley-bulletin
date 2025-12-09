@@ -24,7 +24,7 @@
         margin: 0 auto;
     }
     h1 {
-        font-size: 36px; /* H1 más grande que H2 */
+        font-size: 36px;
         color: #e2e8f0;
         margin: 10px 0 5px;
         font-weight: bold;
@@ -41,22 +41,6 @@
         background-color: #cacbcd;
         width: 80%;
         margin: 0 auto 20px;
-    }
-
-    /* Contenedor principal */
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-
-    /* Contenido izquierdo */
-    .content {
-        max-width: 800px;
-        margin-right: 20px;
     }
 
     /* Texto introductorio */
@@ -94,10 +78,26 @@
         margin-top: 5px;
     }
 
+    /* Contenedor boletines + slider */
+    .bulletin-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        gap: 20px;
+    }
+
+    /* Contenido izquierdo (boletines) */
+    .content {
+        max-width: 800px;
+    }
+
     /* Slider lateral derecho */
     .slider {
         position: sticky;
-        top: 20px;
+        top: 0;
         width: 250px;
         display: flex;
         flex-direction: column;
@@ -158,20 +158,22 @@
     .bulletin p b {
         color: #e2e8f0;
     }
+    /* Tabla elegante */
     table {
         width: 100%;
         border-collapse: collapse;
         margin: 15px 0;
     }
-    table, th, td {
-        border: 1px solid #cacbcd;
+    th, td {
+        padding: 8px;
+        border-bottom: 1px solid #cacbcd; /* lineas de la tabla */
     }
     th {
-        color: #1a73e8;
-        padding: 8px;
+        color: #1a73e8; /* encabezados en azul como View More */
+        border-bottom: 1px solid #cacbcd;
     }
     td {
-        padding: 8px;
+        border-bottom: 1px solid #cacbcd;
     }
     .conclusion {
         color: #1a73e8;
@@ -188,29 +190,29 @@
     <hr>
 </div>
 
-<div class="container">
-    <!-- Contenido izquierdo -->
+<!-- Texto introductorio y botones ocupando todo el ancho -->
+<div class="intro">
+    This website aims to bring facts to the people of the <b>Thames Valley</b> without all the <b>conjecture</b>, <b>abuse</b>, <b>PCC crime washing</b> and <b>misinformation</b> that comes with social media. The <b>Freedom of Information Act</b>, used correctly, is a powerful tool that holds those spending taxpayer money to account.
+</div>
+
+<div class="buttons-row">
+    <div class="btn">
+        Bulletin #1
+        <div class="title">Matthew Barber, Police and Crime commissioner for the Thames Valley</div>
+    </div>
+    <div class="btn">
+        Bulletin #2
+        <div class="title">Environmental crime in South Oxfordshire</div>
+    </div>
+    <div class="btn">
+        Bulletin #3
+        <div class="title">Police waiting lists analysis</div>
+    </div>
+</div>
+
+<!-- Contenedor boletines + slider -->
+<div class="bulletin-container">
     <div class="content">
-        <div class="intro">
-            This website aims to bring facts to the people of the <b>Thames Valley</b> without all the <b>conjecture</b>, <b>abuse</b>, <b>PCC crime washing</b> and <b>misinformation</b> that comes with social media. The <b>Freedom of Information Act</b>, used correctly, is a powerful tool that holds those spending taxpayer money to account.
-        </div>
-
-        <!-- Botones centrados -->
-        <div class="buttons-row">
-            <div class="btn">
-                Bulletin #1
-                <div class="title">Matthew Barber, Police and Crime commissioner for the Thames Valley</div>
-            </div>
-            <div class="btn">
-                Bulletin #2
-                <div class="title">Environmental crime in South Oxfordshire</div>
-            </div>
-            <div class="btn">
-                Bulletin #3
-                <div class="title">Police waiting lists analysis</div>
-            </div>
-        </div>
-
         <!-- Boletín 1 -->
         <div class="bulletin">
             <div class="bulletin-number">Bulletin #1</div>
@@ -250,7 +252,7 @@
         </div>
     </div>
 
-    <!-- Slider lateral derecho -->
+    <!-- Slider lateral derecho empieza desde Bulletin 1 -->
     <div class="slider">
         <div class="slider-item">
             Bulletin #1
@@ -272,6 +274,7 @@
 
 </body>
 </html>
+
 
 
 
