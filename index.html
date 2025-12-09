@@ -2,148 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Thames Valley Bulletin</title>
+    <title>The Thames Valley Bulletin</title>
     <style>
-        /* Estilos generales */
         body {
-            font-family: Arial, Calibri, sans-serif;
+            background-color: #1a1a1a; /* fondo oscuro */
+            color: #e2e8f0; /* texto claro */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1C1C1C; /* fondo negro antracita */
-            color: #FFFFFF;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
         }
 
-        /* Header */
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            border-bottom: 2px solid #5A7D9A; /* línea azul grisácea */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        header h1 {
+
+        /* LOGO */
+        .logo {
+            display: block;
+            margin: 20px auto 10px auto;
+            width: 160px;
+            height: auto;
+        }
+
+        /* TITULOS */
+        h1 {
+            text-align: center;
             font-size: 2.5em;
-            margin: 0;
-            color: #FFFFFF;
-        }
-        header h2 {
-            font-size: 1.2em;
-            font-weight: normal;
-            color: #AABBD1; /* gris azulado */
-            margin-top: 10px;
+            margin-bottom: 5px;
         }
 
-        /* Introductorio */
-        .intro {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 20px;
-            line-height: 1.6em;
-            color: #CCCCCC;
-        }
-
-        /* Sección Bulletins */
-        .bulletins {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-        .bulletin {
-            background: linear-gradient(145deg, #4A4A4A, #2C2C2C); /* gris degradado */
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
-            width: 300px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .bulletin:hover {
-            transform: scale(1.05);
-        }
-        .bulletin h3 {
-            margin-top: 0;
-            color: #AABBD1; /* gris azulado */
-        }
-        .bulletin p {
-            color: #E0E0E0;
-        }
-
-        /* Sidebars */
-        .sidebars {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            margin: 0 auto 40px auto;
-        }
-        .sidebar {
-            width: 200px;
-            padding: 10px;
-            background-color: #2A2A2A;
-            border-radius: 5px;
-            color: #CCCCCC;
-            line-height: 1.4em;
-        }
-
-        /* Footer */
-        footer {
+        h2 {
             text-align: center;
-            padding: 20px;
-            border-top: 2px solid #5A7D9A;
-            font-size: 0.9em;
-            color: #888888;
+            font-size: 1.3em;
+            font-weight: normal;
+            color: #cbd5e0;
+            margin-top: 5px;
         }
+
+        /* LÍNEA SEPARADORA */
+        .separator {
+            width: 50%;
+            max-width: 300px;
+            height: 2px;
+            background: #555;
+            margin: 15px auto;
+        }
+
+        /* BOTONES BULLETINS */
+        .bulletin-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .bulletin-btn {
+            background: linear-gradient(180deg, #4a5568, #2d3748);
+            color: #e2e8f0;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            width: 220px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .bulletin-btn:hover {
+            background: linear-gradient(180deg, #5a6b80, #3b4754);
+            transform: translateY(-3px);
+        }
+
+        /* INTRO TEXT */
+        .intro {
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        /* SIDEBARS RESUMEN */
+        .sidebar {
+            background: #2d3748;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
     </style>
 </head>
 <body>
+    <div class="container">
+        <!-- LOGO -->
+        <img src="the-thame-valley-bulletin-WB.png" alt="Logo Thames Valley Bulletin" class="logo">
 
-    <!-- Header -->
-    <header>
-        <h1>Thames Valley Bulletin</h1>
-        <h2>Bringing facts to the people of the Thames Valley with transparency and clarity</h2>
-    </header>
+        <!-- TITULOS -->
+        <h1>The Thames Valley Bulletin</h1>
+        <div class="separator"></div>
+        <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
 
-    <!-- Texto introductorio -->
-    <div class="intro">
-        <p>This website aims to bring facts to the people of the Thames Valley without all the conjecture, abuse, PCC crime washing and mis information that comes with social media. The Freedom of Information Act, used in the right way, is a powerful tool that holds those that spend the taxes we give them, to account. However, some public authorities seem to think it does not apply to them. Content will be added as issues arise and may highlight irony so readers can come to their own conclusion over the right or wrong of what we have published.</p>
-    </div>
+        <!-- INTRO TEXT -->
+        <p class="intro">
+            This website aims to bring facts to the people of the Thames Valley without all the conjecture, abuse, PCC crime washing and misinformation that comes with social media. The Freedom of Information Act, used correctly, is a powerful tool that holds those spending taxpayer money to account.
+        </p>
 
-    <!-- Botones / Bulletins -->
-    <div class="bulletins">
-        <div class="bulletin">
-            <h3>Bulletin #1</h3>
-            <p>Matthew Barber, Police and Crime commissioner for the Thames Valley</p>
+        <!-- BOTONES BULLETINS -->
+        <div class="bulletin-buttons">
+            <a href="#bulletin1" class="bulletin-btn">Bulletin #1<br><small>Matthew Barber, Police and Crime commissioner</small></a>
+            <a href="#bulletin2" class="bulletin-btn">Bulletin #2<br><small>Environmental crime in South Oxfordshire</small></a>
+            <a href="#bulletin3" class="bulletin-btn">Bulletin #3<br><small>Police waiting lists analysis</small></a>
         </div>
-        <div class="bulletin">
-            <h3>Bulletin #2</h3>
-            <p>Environmental crime in South Oxfordshire</p>
-        </div>
-        <div class="bulletin">
-            <h3>Bulletin #3</h3>
-            <p>NHS waiting lists and Police investigations backlog</p>
-        </div>
-    </div>
 
-    <!-- Sidebars (resumen rápido) -->
-    <div class="sidebars">
+        <!-- EJEMPLO SIDEBAR RESUMEN -->
         <div class="sidebar">
-            Bulletin #1 - Matthew Barber, Police and Crime commissioner
+            Bulletin #1: Matthew Barber, Police and Crime commissioner for the Thames Valley.
         </div>
         <div class="sidebar">
-            Bulletin #2 - Environmental crime in South Oxfordshire
+            Bulletin #2: Environmental crime involving 250 lorries of landfill in South Oxfordshire.
         </div>
         <div class="sidebar">
-            Bulletin #3 - NHS waiting lists and Police investigations backlog
+            Bulletin #3: Police waiting lists and investigation backlog.
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        © 2025 The Thames Valley Bulletin
-    </footer>
-
 </body>
 </html>
+
