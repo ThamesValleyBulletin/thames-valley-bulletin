@@ -122,7 +122,7 @@
         border-radius: 18px;
         border: 1px solid #5a5a5a;
         margin-bottom: 50px;
-        position: relative; /* necesario para la imagen */
+        position: relative;
         overflow: visible;
     }
 
@@ -156,16 +156,14 @@
         font-size: 17px;
     }
 
-    /* Imagen sobresaliendo */
+    /* Imagen centrada debajo del título */
     .bulletin-img {
-        position: absolute;
-        top: -50px;
-        right: -280px;
-        width: 400px; /* ajustar según convenga */
-        height: auto;
+        display: block;
+        width: 100%;
+        max-width: 400px; 
+        margin: 20px auto;
         border-radius: 25px;
         object-fit: cover;
-        z-index: 2;
     }
 
     /* TABLA */
@@ -204,13 +202,8 @@
             flex-direction: column;
         }
         .bulletin-img {
-            position: relative;
-            top: 0;
-            right: 0;
-            width: 100%;
-            max-width: 350px;
-            margin: 20px auto 0 auto;
-            display: block;
+            max-width: 100%;
+            margin: 20px auto;
         }
         .bulletin-number {
             position: relative;
@@ -262,7 +255,6 @@
 
     <!-- ---- CONTENIDO DE LOS BOLETINES ---- -->
     <div class="content-wrapper">
-
         <div class="bulletin-column">
 
             <!-- BULLETIN 1 -->
@@ -272,7 +264,9 @@
                 <div class="bulletin-subtitle">
                     Transparency and taxpayer accountability in APCC payments
                 </div>
-                <img src="bulletin1-img.png" class="bulletin-img" alt="Bulletin 1 Image" />
+
+                <!-- Imagen insertada debajo del título y subtitulo -->
+                <img src="bulletin1.1.png" class="bulletin-img" alt="Bulletin 1 Image" />
 
                 <div class="bulletin-text">
                     The <b>Association of Police and Crime Commissioners (APCC)</b> has 33 PCCs as members and is registered as a member’s club. A FOI Act request was sent to this organisation, all of whose 33 members are <b>public servants</b>, asking to see a copy of their full accounts. This request was refused.
