@@ -5,180 +5,191 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Thames Valley Bulletin</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0f0f0f; /* fondo antracita */
-        color: white;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f; /* fondo antracita */
+    color: white;
+    text-align: center;
+}
 
-    .container {
-        width: 95%;
-        max-width: 1100px;
-        margin: auto;
-        padding-top: 40px;
-    }
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 40px;
+}
 
-    img.logo {
-        display: block;
-        margin: 0 auto 20px auto;
-        width: 160px;
-    }
+img.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 160px;
+}
 
-    h1 {
-        font-size: 44px; /* un poco más grande que h2 */
-        color: #e2e8f0;
-        margin-bottom: 10px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+h1 {
+    font-size: 44px;
+    color: #e2e8f0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-    h2 {
-        font-size: 36px; /* un poco más grande */
-        color: #a0c4e2;
-        margin-top: 0;
-        margin-bottom: 20px;
-        font-weight: normal;
-    }
+h2 {
+    font-size: 36px;
+    color: #a0c4e2;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
 
-    hr.separator {
-        width: 60%;
-        border: 1px solid #cacbcd;
-        margin-bottom: 40px;
-    }
+hr.separator {
+    width: 60%;
+    border: 1px solid #cacbcd;
+    margin-bottom: 40px;
+}
 
-    .intro {
-        max-width: 800px;
-        margin: auto;
-        text-align: justify;
-        font-size: 18px;
-        line-height: 1.45;
-        margin-bottom: 40px;
-    }
+.intro {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.45;
+    margin-bottom: 40px;
+}
 
-    .intro b {
-        color: #f5f5f5;
-    }
+.intro b {
+    color: #f5f5f5;
+}
 
-    /* BOTONES CENTRALES */
+/* BOTONES CENTRALES */
+.buttons-central {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bulletin-btn {
+    background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid #5a5a5a;
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+.bulletin-label {
+    color: #4c9bdc;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.bulletin-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f5f5f5;
+    margin-bottom: 12px;
+}
+
+.view-more {
+    display: inline-block;
+    background: linear-gradient(145deg, #3b6cff, #1c1c3f); /* degradado azul/gris */
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ---- BOLETINES ---- */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.bulletin-box {
+    width: 100%;
+    max-width: 750px;
+    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #5a5a5a;
+    text-align: left;
+    position: relative;
+}
+
+.bulletin-number {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #4c9bdc, #1c3f5a);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.bulletin-box h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bulletin-subtitle {
+    font-size: 20px;
+    color: #a0c4ff;
+    margin-bottom: 18px;
+}
+
+.bulletin-text {
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 17px;
+}
+
+th {
+    text-align: left;
+    padding: 10px;
+    color: #ffffff;
+    background: #4c9bdc;
+    border: 1px solid #cacbcd;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #cacbcd;
+    color: #f5f5f5;
+}
+
+.conclusion-title {
+    color: #4c9bdc;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
     .buttons-central {
-        width: 100%;
-        max-width: 750px;
-        margin: 0 auto 40px auto;
-        display: flex;
         flex-direction: column;
-        gap: 20px;
     }
-
-    .bulletin-btn {
-        background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
-        border-radius: 18px;
-        padding: 25px 20px;
-        text-align: center;
-        border: 1px solid #5a5a5a;
-        text-decoration: none;
-        color: #f5f5f5;
-    }
-
-    .bulletin-label {
-        color: #4c9bdc;
-        font-size: 18px;
-        font-weight: normal;
-        margin-bottom: 8px;
-    }
-
-    .bulletin-title {
-        font-size: 22px;
-        font-weight: bold;
-        color: #f5f5f5;
-        margin-bottom: 12px;
-    }
-
-    .view-more {
-        display: inline-block;
-        background: linear-gradient(145deg, #3f3f3f, #1c1c1c);
-        padding: 10px 20px;
-        border-radius: 12px;
-        margin-top: 10px;
-        color: #f5f5f5;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    /* ---- BOLETINES ---- */
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        margin-top: 50px;
-    }
-
-    .bulletin-box {
-        width: 100%;
-        max-width: 750px;
-        background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
-        padding: 25px;
-        border-radius: 18px;
-        border: 1px solid #5a5a5a;
-        text-align: left;
-    }
-
-    .bulletin-box h3 {
-        font-size: 28px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .bulletin-subtitle {
-        font-size: 20px;
-        color: #a0c4ff;
-        margin-bottom: 18px;
-    }
-
-    .bulletin-text {
-        line-height: 1.5;
-        font-size: 17px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 17px;
-    }
-
-    th {
-        text-align: left;
-        padding: 10px;
-        color: #ffffff;
-        background: #4c9bdc;
-        border: 1px solid #cacbcd;
-    }
-
-    td {
-        padding: 10px;
-        border: 1px solid #cacbcd;
-        color: #f5f5f5;
-    }
-
-    .conclusion-title {
-        color: #4c9bdc;
-        font-size: 24px;
-        font-weight: bold;
-        margin-top: 25px;
-        margin-bottom: 10px;
-    }
-
-    @media (max-width: 900px) {
-        .buttons-central {
-            flex-direction: column;
-        }
-    }
+}
 </style>
 </head>
-
 <body>
 <div class="container">
 
@@ -219,28 +230,17 @@
 
         <!-- BULLETIN 1 -->
         <div id="bulletin1" class="bulletin-box">
+            <div class="bulletin-number">Bulletin 1</div>
             <h3>Matthew Barber, Police and Crime Commissioner for the Thames Valley</h3>
             <div class="bulletin-subtitle">Transparency and taxpayer accountability in APCC payments</div>
 
             <div class="bulletin-text">
                 The <b>Association of Police and Crime Commissioners</b> has 33 PCCs as members and is registered as a member’s club.
-                A FOI act request was sent to this organisation all of who's 33 members are public servant asking to see a copy of their full accounts. This request was refused.
-                <br><br>
-                The <b>Information Commissioner’s Office</b> upheld this stating that under the FOI act a member’s club was not required to respond.
-                <br><br>
-                A FOI request was sent to <b>Matthew Barber</b> asking how much he had paid over the past 5 years in membership fees to his members club, out of taxpayers funds. He responded:
-                <br><br>
-                Considering the substantial nature of these payments a FOI request was sent to Matthew Barber asking him to supply a copy of the full <b>APCC accounts</b> as, being a member, he would be issued with them on an annual basis to sign off. He would want to know how <b>Thames Valley taxpayers’ money was being spent</b>.
-                <br><br>
-                To date he has refused to answer the request but he did attend the National Rural Crime Network’s <b>“Rural Crime conference”</b> this year. (The NRCN is a trading arm of the APCCs.) It was held at the Institute of <b>Directors in Pall Mall</b>.
+                ...
             </div>
 
-            <!-- TABLA -->
             <table>
-                <tr>
-                    <th>Year</th>
-                    <th>Amount (£)</th>
-                </tr>
+                <tr><th>Year</th><th>Amount (£)</th></tr>
                 <tr><td>2021/22</td><td>33,387.54</td></tr>
                 <tr><td>2022/23</td><td>2,000.00</td></tr>
                 <tr><td>2023/24</td><td>41,762.79</td></tr>
@@ -256,29 +256,21 @@
 
         <!-- BULLETIN 2 -->
         <div id="bulletin2" class="bulletin-box">
+            <div class="bulletin-number">Bulletin 2</div>
             <h3>Environmental Crime in South Oxfordshire</h3>
             <div class="bulletin-subtitle">"A quarter-million-pound landfill offence – still unprosecuted"</div>
             <div class="bulletin-text">
-                Bulletin #2 will include photographic evidence of a major environmental crime involving an estimated 250 lorries of landfill dumped illegally in South Oxfordshire.  
-                This crime is visible on Google Earth, yet neither the Environment Agency nor Oxford County Council have pursued prosecution.
-                <br><br>
-                The offence qualifies as fly-tipping—ranging from minor dumping to large-scale illegal waste disposal like the one recently featured in national news (20/11/2025).
-                It would have generated over £250,000 in landfill tax at the highest rate due to toxic waste filling a floodplain.  
-                Residents of Cholsey may now face increased flooding risk as a result.
+                Bulletin #2 will include photographic evidence of a major environmental crime involving an estimated 250 lorries of landfill dumped illegally in South Oxfordshire...
             </div>
         </div>
 
         <!-- BULLETIN 3 -->
         <div id="bulletin3" class="bulletin-box">
+            <div class="bulletin-number">Bulletin 3</div>
             <h3>Police Waiting Lists</h3>
             <div class="bulletin-subtitle">"What the NHS counts daily — the police say they don't track"</div>
             <div class="bulletin-text">
-                We are all familiar with NHS waiting lists.  
-                The NHS knows each day how many beds will be freed and how many patients are waiting.
-                <br><br>
-                Matthew Hogg, Chief Constable of the Thames Valley, claims not to know how many reported crimes are awaiting available investigating officers — despite frontline officers describing extremely long internal waiting lists.
-                <br><br>
-                A national FOI survey will reveal the real scale of the backlog and provide the first public snapshot of policing “waiting lists”.
+                We are all familiar with NHS waiting lists...
             </div>
         </div>
 
