@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thames Valley Bulletin</title>
-
 <style>
     body {
         margin: 0;
@@ -73,7 +72,7 @@
         padding: 20px;
         text-align: center;
         border: 1px solid #5a5a5a;
-        text-decoration: none; /* QUITA SUBRAYADO */
+        text-decoration: none; /* sin subrayado */
     }
 
     .bulletin-label {
@@ -96,7 +95,7 @@
         border-radius: 12px;
         margin-top: 10px;
         color: #f5f5f5;
-        text-decoration: none; /* QUITA SUBRAYADO */
+        text-decoration: none; /* sin subrayado */
         font-weight: bold;
     }
 
@@ -111,6 +110,7 @@
     }
 
     .bulletin-box {
+        position: relative;
         background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
         padding: 25px;
         border-radius: 18px;
@@ -118,9 +118,22 @@
         margin-bottom: 50px;
     }
 
+    /* Rectángulo superior izquierda con "Bulletin X" */
+    .bulletin-number {
+        position: absolute;
+        top: -15px;
+        left: 15px;
+        background: linear-gradient(145deg, #3b6cff, #1c1c1c);
+        padding: 5px 15px;
+        border-radius: 12px;
+        color: #f5f5f5;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
     .bulletin-box h3 {
         font-size: 28px;
-        margin-top: 0;
+        margin-top: 25px; /* espacio para el rectángulo */
         margin-bottom: 5px;
         font-weight: bold;
         color: #cbd5e0;
@@ -150,12 +163,12 @@
         padding: 10px;
         color: white;
         background-color: #4c9bdc;
-        border-bottom: 2px solid #cacbcd;
+        border: 1px solid #cacbcd;
     }
 
     td {
         padding: 10px;
-        border-bottom: 1px solid #cacbcd;
+        border: 1px solid #cacbcd;
     }
 
     /* Conclusión */
@@ -167,14 +180,36 @@
         margin-bottom: 10px;
     }
 
+    /* Responsive */
     @media (max-width: 900px) {
+        .buttons-central {
+            flex-direction: column;
+            width: 95%;
+        }
         .content-wrapper {
             flex-direction: column;
         }
+        .bulletin-number {
+            top: -10px;
+            left: 10px;
+            font-size: 14px;
+        }
+        .bulletin-box h3 {
+            font-size: 24px;
+        }
+        .bulletin-subtitle {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        h1 { font-size: 32px; }
+        h2 { font-size: 24px; }
+        .bulletin-title { font-size: 20px; }
+        .bulletin-label { font-size: 16px; }
     }
 </style>
 </head>
-
 <body>
 <div class="container">
 
@@ -197,13 +232,11 @@
             <div class="bulletin-title">Matthew Barber, Police and Crime Commissioner</div>
             <span class="view-more">VIEW MORE</span>
         </a>
-
         <a href="#bulletin2" class="bulletin-btn">
             <div class="bulletin-label">Bulletin 2</div>
             <div class="bulletin-title">Environmental Crime in South Oxfordshire</div>
             <span class="view-more">VIEW MORE</span>
         </a>
-
         <a href="#bulletin3" class="bulletin-btn">
             <div class="bulletin-label">Bulletin 3</div>
             <div class="bulletin-title">Police Waiting Lists Revealed</div>
@@ -215,6 +248,7 @@
 
         <!-- BULLETIN 1 -->
         <div id="bulletin1" class="bulletin-box">
+            <div class="bulletin-number">Bulletin 1</div>
             <h3>Matthew Barber, Police and Crime Commissioner for the Thames Valley</h3>
             <div class="bulletin-subtitle">Transparency and taxpayer accountability in APCC payments</div>
             <div class="bulletin-text">
@@ -245,6 +279,7 @@
 
         <!-- BULLETIN 2 -->
         <div id="bulletin2" class="bulletin-box">
+            <div class="bulletin-number">Bulletin 2</div>
             <h3>Environmental Crime in South Oxfordshire</h3>
             <div class="bulletin-subtitle">"A quarter-million-pound landfill offence – still unprosecuted"</div>
             <div class="bulletin-text">
@@ -256,6 +291,7 @@
 
         <!-- BULLETIN 3 -->
         <div id="bulletin3" class="bulletin-box">
+            <div class="bulletin-number">Bulletin 3</div>
             <h3>Police Waiting Lists</h3>
             <div class="bulletin-subtitle">"What the NHS counts daily — the police say they don't track"</div>
             <div class="bulletin-text">
@@ -271,7 +307,6 @@
 </div>
 </body>
 </html>
-
 
 
 
