@@ -15,74 +15,64 @@ body {
 
 /* ================= HERO ================= */
 .hero {
+    min-height: 85vh;
     background:
-        linear-gradient(rgba(15,15,15,0.78), rgba(15,15,15,0.78)),
+        linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)),
         url("thethamesvalley-landscape.png") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 60px 20px 50px;
+    padding: 40px 20px;
 }
 
-.logo {
+.hero img {
     width: 160px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-h1 {
-    font-size: 44px;
+.hero h1 {
+    font-size: 46px;
     color: #e2e8f0;
     margin-bottom: 10px;
 }
 
-h2 {
+.hero h2 {
     font-size: 32px;
     color: #a0c4e2;
     margin: 0;
 }
 
+/* ================= FRANJA AZUL ================= */
+.blue-strip {
+    width: 100vw;
+    background: linear-gradient(145deg, #1e40af, #0f172a);
+    padding: 60px 20px;
+}
+
 /* ================= BOTONES ================= */
-.buttons-wrapper {
-    position: relative;
-    max-width: 1000px;
-    margin: -20px auto 60px;
-    padding: 0 20px;
-}
-
-/* franja DETRÁS */
-.buttons-wrapper::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 55%; /* empieza aprox. segunda línea del título */
-    height: 45%;
-    background: linear-gradient(145deg, #1e3a8a, #1c1c1c);
-    border-radius: 20px;
-    z-index: 0;
-}
-
 .buttons-central {
-    position: relative;
+    max-width: 1100px;
+    margin: auto;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
-    z-index: 1;
 }
 
 .bulletin-btn {
-    flex: 1;
-    min-width: 240px;
-    max-width: 280px;
     background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
     border-radius: 18px;
-    padding: 22px 20px 24px;
+    padding: 24px 22px 26px;
     border: 1px solid #5a5a5a;
     text-decoration: none;
     color: #f5f5f5;
+    width: 280px;
 }
 
 .bulletin-label {
-    color: #4c9bdc;
+    color: #7dd3fc;
     font-size: 18px;
     margin-bottom: 8px;
 }
@@ -90,13 +80,13 @@ h2 {
 .bulletin-title {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .view-more {
     display: inline-block;
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
-    padding: 10px 20px;
+    background: linear-gradient(145deg, #3b82f6, #1e293b);
+    padding: 10px 22px;
     border-radius: 12px;
     font-weight: bold;
     text-decoration: none;
@@ -111,12 +101,11 @@ h2 {
 }
 
 .intro {
-    max-width: 800px;
-    margin: auto;
+    max-width: 820px;
+    margin: 60px auto 40px;
     text-align: justify;
     font-size: 18px;
-    line-height: 1.45;
-    margin-bottom: 40px;
+    line-height: 1.5;
 }
 
 hr {
@@ -134,16 +123,15 @@ hr {
 
 .bulletin-column {
     width: 100%;
-    max-width: 700px;
-    text-align: left;
+    max-width: 720px;
 }
 
 .bulletin-box {
     background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
-    padding: 25px;
+    padding: 28px;
     border-radius: 18px;
     border: 1px solid #5a5a5a;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     position: relative;
 }
 
@@ -151,8 +139,8 @@ hr {
     position: absolute;
     top: 15px;
     left: 15px;
-    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
-    padding: 5px 12px;
+    background: linear-gradient(145deg, #60a5fa, #1e293b);
+    padding: 6px 14px;
     border-radius: 12px;
     font-weight: bold;
     font-size: 14px;
@@ -160,35 +148,36 @@ hr {
 
 .bulletin-box h3 {
     font-size: 28px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .bulletin-subtitle {
     font-size: 20px;
-    color: #a0c4ff;
-    margin-bottom: 18px;
+    color: #93c5fd;
+    margin-bottom: 20px;
 }
 
 .bulletin-text {
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 .bulletin-img {
     width: 100%;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 22px 0;
 }
 
 /* TABLA */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 28px 0;
+    font-size: 17px;
 }
 
 th {
-    background-color: #4c9bdc;
+    background-color: #3b82f6;
     padding: 10px;
 }
 
@@ -198,21 +187,16 @@ td {
 }
 
 .conclusion-title {
-    color: #3b6cff;
+    color: #60a5fa;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 26px;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    h1 { font-size: 34px; }
-    h2 { font-size: 24px; }
-
-    .buttons-wrapper::before {
-        top: 60%;
-        height: 40%;
-    }
+    .hero h1 { font-size: 34px; }
+    .hero h2 { font-size: 24px; }
 
     .buttons-central {
         flex-direction: column;
@@ -225,14 +209,14 @@ td {
 <body>
 
 <!-- HERO -->
-<div class="hero">
-    <img src="the-thame-valley-bulletin-WB.png" class="logo" alt="Logo">
+<section class="hero">
+    <img src="the-thame-valley-bulletin-WB.png" alt="Logo">
     <h1>THE THAMES VALLEY BULLETIN</h1>
     <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
-</div>
+</section>
 
-<!-- BOTONES -->
-<div class="buttons-wrapper">
+<!-- FRANJA AZUL + BOTONES -->
+<section class="blue-strip">
     <div class="buttons-central">
         <a href="#bulletin1" class="bulletin-btn">
             <div class="bulletin-label">Bulletin 1</div>
@@ -252,7 +236,7 @@ td {
             <span class="view-more">VIEW MORE</span>
         </a>
     </div>
-</div>
+</section>
 
 <!-- TEXTO INTRO -->
 <div class="container">
@@ -273,7 +257,7 @@ td {
                 <h3>Matthew Barber, Police and Crime Commissioner for the Thames Valley</h3>
                 <div class="bulletin-subtitle">Transparency and taxpayer accountability in APCC payments</div>
 
-                <img src="bulletin.1.1.png" class="bulletin-img" alt="Bulletin 1 Image">
+                <img src="bulletin.1.1.png" class="bulletin-img">
 
                 <div class="bulletin-text">
                     The <b>Association of Police and Crime Commissioners (APCC)</b> has 33 PCCs as members and is registered as a member’s club. A FOI Act request was sent to this organisation, all of whose 33 members are <b>public servants</b>, asking to see a copy of their full accounts. This request was refused.
@@ -291,12 +275,12 @@ td {
                 </table>
 
                 <div class="bulletin-text">
-                    Considering the substantial nature of these payments, a FOI request was sent to <b>Matthew Barber</b> asking him to supply a copy of the full APCC accounts for the past 5 years.
+                    Considering the substantial nature of these payments, a FOI request was sent to <b>Matthew Barber</b> asking him to supply a copy of the full APCC accounts, as a member he would be issued with them annually to sign off.
                 </div>
 
                 <div class="conclusion-title">Conclusion</div>
                 <div class="bulletin-text">
-                    For transparency, <b>Matthew Barber</b> should supply a copy of the full accounts of the APCC so <b>Thames Valley taxpayers</b> can see how their money is being accounted for.
+                    For transparency, <b>Matthew Barber</b> should supply a copy of the full accounts of the APCC for the past 5 years, so <b>Thames Valley taxpayers</b> can see how their money is being accounted for.
                 </div>
             </div>
 
@@ -309,7 +293,7 @@ td {
                 <div class="bulletin-text">
                     An environmental crime in South Oxfordshire, visible on Google Earth, has not been prosecuted by either the <b>Environment Agency</b> or <b>Oxford County Council</b>.
                     <br><br>
-                    This illegal dumping would have generated approximately <b>£¼ million in landfill tax</b>.
+                    This illegal dumping would have generated approximately <b>£¼ million in landfill tax</b>, as it infilled the floodplain.
                 </div>
             </div>
 
@@ -320,9 +304,9 @@ td {
                 <div class="bulletin-subtitle">"What the NHS counts daily — the police say they don't track"</div>
 
                 <div class="bulletin-text">
-                    We have all heard of NHS waiting lists.
+                    We have all heard of NHS waiting lists. It is a basic business performance indicator.
                     <br><br>
-                    <b>Matthew Hogg</b>, Chief Constable of the Thames Valley, claims not to know how many crimes are waiting to be investigated.
+                    <b>Matthew Hogg</b>, Chief Constable of the Thames Valley, claims not to know how many crimes have been reported for which no investigating officers are available.
                 </div>
             </div>
 
@@ -332,6 +316,7 @@ td {
 
 </body>
 </html>
+
 
 
 
