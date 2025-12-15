@@ -16,6 +16,8 @@ body {
 
 /* ===== HERO ===== */
 .hero {
+    position: relative; /* 👈 AQUÍ */
+
     background: 
         linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.75)),
         url("thethamesvalley-landscape.png") center/cover no-repeat;
@@ -23,10 +25,19 @@ body {
     padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
-
-    /* 👇 ESTO ES LO IMPORTANTE */
-    padding-bottom: 180px;
+    padding-bottom: 140px;
 }
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px; /* mitad del botón */
+    background: #0f0f0f;
+}
+
+
 
 img.logo {
     display: block;
@@ -49,7 +60,7 @@ h2 {
 /* ===== BOTONES HERO ===== */
 .buttons-central {
     max-width: 900px;
-    margin: -90px auto 0 auto; /* 👈 SUBE LOS BOTONES */
+    margin: 40px auto 0 auto; /* separación normal bajo el H2 */
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -69,7 +80,8 @@ h2 {
     border: 1px solid #5a5a5a;
     text-decoration: none;
     color: #f5f5f5;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+    box-shadow: 0 18px 35px rgba(0,0,0,0.45); /* 👈 AQUÍ */
 }
 
 .bulletin-label {
