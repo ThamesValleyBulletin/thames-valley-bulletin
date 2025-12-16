@@ -307,18 +307,18 @@ td {
         line-height: 1.6;
     }
 }
-    /* ===== BULLETIN GALLERY ===== */
+/* ===== BULLETIN GALLERY (NO FRAME) ===== */
 .bulletin-gallery {
     position: relative;
-    max-width: 520px;
-    margin: 30px auto 10px auto;
+    width: 100%;
+    margin: 25px 0;
 }
 
 .gallery-img {
     display: none;
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid #5a5a5a;
+    border-radius: 10px;
+    border: none;
 }
 
 .gallery-img.active {
@@ -339,12 +339,9 @@ td {
     font-size: 18px;
 }
 
-.gallery-btn.prev {
-    left: -20px;
-}
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
 
-.gallery-btn.next {
-    right: -20px;
 }
 
 @media (max-width: 600px) {
@@ -466,23 +463,32 @@ For transparency, <b>Matthew Barber</b> should supply a copy of the full account
 <div class="bulletin-number">Bulletin 2</div>
 
 <h3>Environmental Crime in South Oxfordshire</h3>
+
 <div class="bulletin-subtitle">
 "A quarter-million-pound landfill offence – still unprosecuted"
 </div>
+
+<!-- IMAGEN PORTADA -->
+<img src="gallery-bulletin2-1.png"
+     class="bulletin-img"
+     alt="Illegal dumping site overview" />
 
 <div class="bulletin-text">
 An environmental crime in South Oxfordshire, visible on Google Earth, has not been prosecuted by either the <b>Environment Agency</b> or <b>Oxford County Council</b>. This is a case of <b>fly tipping</b>, which can range from shovelling mud into a stream, throwing rubbish from a car, to much larger illegal dumping operations occasionally reported in the media.
 <br><br>
 This illegal dumping would have generated approximately <b>£¼ million in landfill tax</b>, as it infilled the floodplain, where waste can be toxic and taxed at the highest rate. As a result, residents of Cholsey may face a higher risk of flooding this year.
 </div>
-    <div class="bulletin-gallery">
+
+<!-- GALERÍA / CARRUSEL -->
+<div class="bulletin-gallery">
     <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
 
-    <img src="gallery-bulletin2-1.png" class="gallery-img active" alt="Environmental evidence image 1">
-    <img src="gallery-bulletin2-2.png" class="gallery-img" alt="Environmental evidence image 2">
+    <img src="gallery-bulletin2-2.png" class="gallery-img active" alt="Environmental evidence image 2">
     <img src="gallery-bulletin2-3.png" class="gallery-img" alt="Environmental evidence image 3">
+    <img src="gallery-bulletin2-4.png" class="gallery-img" alt="Environmental evidence image 4">
 
     <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
+</div>
 </div>
 
 </div>
