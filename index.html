@@ -307,6 +307,55 @@ td {
         line-height: 1.6;
     }
 }
+    /* ===== BULLETIN GALLERY ===== */
+.bulletin-gallery {
+    position: relative;
+    max-width: 520px;
+    margin: 30px auto 10px auto;
+}
+
+.gallery-img {
+    display: none;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #5a5a5a;
+}
+
+.gallery-img.active {
+    display: block;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15,15,15,0.8);
+    color: #4c9bdc;
+    border: 1px solid #4c9bdc;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.gallery-btn.prev {
+    left: -20px;
+}
+
+.gallery-btn.next {
+    right: -20px;
+}
+
+@media (max-width: 600px) {
+    .gallery-btn.prev {
+        left: 5px;
+    }
+    .gallery-btn.next {
+        right: 5px;
+    }
+}
+
 </style>
 </head>
 
@@ -458,6 +507,21 @@ A national FOI survey will reveal the true extent of the pressure on frontline o
 </div>
 </div>
 </div>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('#bulletin2 .gallery-img');
+
+function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+// Auto slide cada 6 segundos
+setInterval(() => {
+    changeSlide(1);
+}, 6000);
+</script>
 
 </body>
 </html>
