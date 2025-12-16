@@ -352,10 +352,10 @@ td {
         right: 5px;
     }
 }
-/* ===== BOTONES HERO MISMA ALTURA EN MÓVIL ===== */
+/* ===== BOTONES HERO MÓVIL PERFECTOS ===== */
 @media (max-width: 768px) {
     .buttons-central {
-        align-items: stretch; /* 🔑 clave */
+        align-items: stretch;
     }
 
     .bulletin-btn {
@@ -363,6 +363,8 @@ td {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;      /* 🔑 centra horizontal */
+        text-align: center;       /* 🔑 centra texto */
     }
 }
 </style>
