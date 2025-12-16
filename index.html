@@ -454,6 +454,45 @@ td {
     border-radius: 14px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.45);
 }
+ /* ===== BOTÓN VOLVER ARRIBA ===== */
+#backToTop {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 52px;
+    height: 52px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+    z-index: 999;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover desktop */
+#backToTop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.7);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+    #backToTop {
+        bottom: 18px;
+        right: 18px;
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+    }
+}
+
 </style>
 </head>
 
@@ -637,12 +676,14 @@ setInterval(() => {
     changeSlide(1);
 }, 6000);
 </script>
+<button id="backToTop">↑</button>
+
 <script>
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
-        backToTopBtn.style.display = "block";
+        backToTopBtn.style.display = "flex";
     } else {
         backToTopBtn.style.display = "none";
     }
@@ -655,7 +696,6 @@ backToTopBtn.addEventListener("click", () => {
     });
 });
 </script>
-<button id="backToTop">↑</button>
 
 </body>
 </html>
