@@ -352,8 +352,12 @@ td {
         right: 5px;
     }
 }
-/* ===== FIX ALTURA BOTONES EN MÓVIL ===== */
+/* ===== BOTONES HERO MISMA ALTURA EN MÓVIL ===== */
 @media (max-width: 768px) {
+    .buttons-central {
+        align-items: stretch; /* 🔑 clave */
+    }
+
     .bulletin-btn {
         min-height: 190px;
         display: flex;
