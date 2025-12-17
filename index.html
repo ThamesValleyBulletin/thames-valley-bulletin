@@ -496,6 +496,36 @@ td {
         font-size: 20px;
     }
 }
+/* ===== CONTENIDO BLOQUEADO (COMING SOON) ===== */
+.coming-soon {
+    position: relative;
+}
+
+.coming-soon .locked-content {
+    filter: blur(6px);
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Etiqueta central */
+.coming-soon::after {
+    content: "REPORT COMING SOON";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(15,15,15,0.85);
+    color: #4c9bdc;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid rgba(76,155,220,0.6);
+    text-transform: uppercase;
+    z-index: 5;
+}
 
 </style>
 </head>
