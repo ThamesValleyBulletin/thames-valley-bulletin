@@ -551,7 +551,7 @@ td {
 <!-- ===== BOTONES ===== -->
 <div class="buttons-section">
     <div class="buttons-central">
-  <a href="#bulletin1" class="bulletin-btn published" id="bulletin1-btn">
+  <a href="#bulletin1" class="bulletin-btn published" id="bulletin1-btn" onclick="handleBulletin1Click(event)">
     <div class="bulletin-label">Bulletin 1</div>
     <div class="bulletin-title">We paid Crime Commissioner’s £180k of membership fees?</div>
     <span class="view-more">VIEW MORE</span>
@@ -769,19 +769,23 @@ backToTopBtn.addEventListener("click", () => {
 });
 </script>
 <script>
-  // Contador para el botón del Boletín 1
-  let count = localStorage.getItem('bulletin1Counter') || 0;
-  const counterDisplay = document.getElementById('bulletin1-counter');
-  counterDisplay.textContent = count;
+function handleBulletin1Click(event) {
+    event.preventDefault(); // detiene temporalmente el salto al ancla
+    let count = parseInt(localStorage.getItem('bulletin1Counter') || '0');
+    count++;
+    localStorage.setItem('bulletin1Counter', count);
+    document.getElementById('bulletin1-counter').textContent = count + " visits";
+    // luego continúa al enlace
+    window.location = event.target.closest('a').href;
+}
 
-  const bulletinBtn = document.getElementById('bulletin1-btn');
-  bulletinBtn.addEventListener('click', () => {
-      count++;
-      localStorage.setItem('bulletin1Counter', count);
-      counterDisplay.textContent = count;
-  });
+// inicializa el contador al cargar la página
+document.addEventListener("DOMContentLoaded", function() {
+    let saved = localStorage.getItem('bulletin1Counter') || '0';
+    document.getElementById('bulletin1-counter').textContent = saved + " visits";
+});
 </script>
-
+    
 </body>
 </html>
 
