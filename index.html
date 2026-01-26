@@ -466,17 +466,21 @@ td {
     border-radius: 14px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.45);
 }
- /* ===== BOTÓN VOLVER ARRIBA ===== */
-#backToTop {
+/* ===== BOTÓN VOLVER ARRIBA ===== */
+#backToTopWrapper {
     position: fixed;
     bottom: 28px;
     right: 28px;
-    width: 68px;
-    height: 72px;
-    display: none;
+    display: flex;
+    flex-direction: column; /* flecha arriba, texto debajo */
     align-items: center;
-    justify-content: center;
-    font-size: 22px;
+    z-index: 999;
+}
+
+#backToTop {
+    width: 68px;
+    height: 68px;
+    font-size: 36px;       /* flecha más grande */
     font-weight: bold;
     color: white;
     background: linear-gradient(145deg, #3b6cff, #1c1c1c);
@@ -484,23 +488,11 @@ td {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 8px 22px rgba(0,0,0,0.55);
-    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-    /* Texto bajo la flecha del botón */
-#backToTop {
-    flex-direction: column;
-}
-
-#backToTop .back-to-top-text {
-    font-size: 11px;
-    margin-top: 2px;
-    color: white;
-    font-weight: bold;       /* negrita */
-    text-transform: uppercase; /* MAYÚSCULAS */
-}
-
-
 
 /* Hover desktop */
 #backToTop:hover {
@@ -508,14 +500,31 @@ td {
     box-shadow: 0 12px 28px rgba(0,0,0,0.7);
 }
 
+/* Texto debajo de la flecha */
+#backToTopWrapper .back-to-top-text {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 6px;
+    text-align: center;
+}
+
 /* MÓVIL */
 @media (max-width: 768px) {
-    #backToTop {
+    #backToTopWrapper {
         bottom: 18px;
         right: 18px;
-        width: 46px;
-        height: 46px;
-        font-size: 20px;
+    }
+
+    #backToTop {
+        width: 52px;
+        height: 52px;
+        font-size: 28px;
+    }
+
+    #backToTopWrapper .back-to-top-text {
+        font-size: 10px;
     }
 }
 /* ===== CONTENIDO BLOQUEADO (COMING SOON) ===== */
@@ -762,18 +771,20 @@ setInterval(() => {
     changeSlide(1);
 }, 6000);
 </script>
-<button id="backToTop">
-    ↑
-    <span class="back-to-top-text">Back to top</span>
-</button>
+<div id="backToTopWrapper">
+    <button id="backToTop">
+        ↑
+    </button>
+    <div class="back-to-top-text">BACK TO TOP</div>
+</div>
 <script>
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
-        backToTopBtn.style.display = "flex";
+        backToTopBtn.parentElement.style.display = "flex"; // mostrar el wrapper
     } else {
-        backToTopBtn.style.display = "none";
+        backToTopBtn.parentElement.style.display = "none"; // ocultar el wrapper
     }
 });
 
