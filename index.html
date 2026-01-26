@@ -82,7 +82,11 @@ h2 {
     text-decoration: none;
     color: #f5f5f5;
 }
-
+/* Solo para el botón del Boletín 1 */
+.bulletin-btn.published {
+    background: linear-gradient(145deg, #3b6cff, #1c1c1c); /* azul */
+    border: 1px solid #3b6cff; /* borde azul */
+}
 .bulletin-label {
     color: #4c9bdc;
     font-size: 18px;
@@ -543,11 +547,12 @@ td {
 <!-- ===== BOTONES ===== -->
 <div class="buttons-section">
     <div class="buttons-central">
-        <a href="#bulletin1" class="bulletin-btn">
-            <div class="bulletin-label">Bulletin 1</div>
-            <div class="bulletin-title">We paid Crime Commissioner’s £180k of membership fees?</div>
-            <span class="view-more">VIEW MORE</span>
-        </a>
+       <a href="#bulletin1" class="bulletin-btn published">
+    <div class="bulletin-label">Bulletin 1</div>
+    <div class="bulletin-title">We paid Crime Commissioner’s £180k of membership fees?</div>
+    <span class="view-more">VIEW MORE</span>
+</a>
+
 
         <a href="#bulletin2" class="bulletin-btn">
             <div class="bulletin-label">Bulletin 2</div>
