@@ -471,8 +471,8 @@ td {
     position: fixed;
     bottom: 28px;
     right: 28px;
-    width: 52px;
-    height: 52px;
+    width: 68px;
+    height: 72px;
     display: none;
     align-items: center;
     justify-content: center;
@@ -487,6 +487,18 @@ td {
     z-index: 999;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+    /* Texto bajo la flecha del botón */
+#backToTop {
+    flex-direction: column;
+}
+
+#backToTop .back-to-top-text {
+    font-size: 11px;
+    margin-top: 2px;
+    color: white;
+    font-weight: normal;
+}
+
 
 /* Hover desktop */
 #backToTop:hover {
@@ -748,8 +760,10 @@ setInterval(() => {
     changeSlide(1);
 }, 6000);
 </script>
-<button id="backToTop" title="Back to top">↑</button>
-
+<button id="backToTop">
+    ↑
+    <span class="back-to-top-text">Back to top</span>
+</button>
 <script>
 const backToTopBtn = document.getElementById("backToTop");
 
