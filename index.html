@@ -580,11 +580,13 @@ td {
 
 
 
-        <a href="#bulletin2" class="bulletin-btn">
-            <div class="bulletin-label">Bulletin 2</div>
-            <div class="bulletin-title">Industrial fly tipping in Cholsey</div>
-            <span class="view-more">REPORT COMING SOON</span>
-        </a>
+       <a href="#bulletin2" class="bulletin-btn published" id="bulletin2-btn" onclick="handleBulletin2Click(event)">
+    <div class="bulletin-label">Bulletin 2</div>
+    <div class="bulletin-title">Industrial fly tipping in Cholsey</div>
+    <span class="view-more">VIEW MORE</span>
+    <span id="bulletin2-counter" style="display:block; margin-top:8px; font-size:14px; color:white;">0 visits</span>
+</a>
+
 
         <a href="#bulletin3" class="bulletin-btn">
             <div class="bulletin-label">Bulletin 3</div>
@@ -832,20 +834,18 @@ backToTopBtn.addEventListener("click", () => {
 });
 </script>
 <script>
-function handleBulletin1Click(event) {
-    event.preventDefault(); // detiene temporalmente el salto al ancla
-    let count = parseInt(localStorage.getItem('bulletin1Counter') || '0');
+function handleBulletin2Click(event) {
+    event.preventDefault();
+    let count = parseInt(localStorage.getItem('bulletin2Counter') || '0');
     count++;
-    localStorage.setItem('bulletin1Counter', count);
-    document.getElementById('bulletin1-counter').textContent = count + " visits";
-    // luego continúa al enlace
+    localStorage.setItem('bulletin2Counter', count);
+    document.getElementById('bulletin2-counter').textContent = count + " visits";
     window.location = event.target.closest('a').href;
 }
 
-// inicializa el contador al cargar la página
 document.addEventListener("DOMContentLoaded", function() {
-    let saved = localStorage.getItem('bulletin1Counter') || '0';
-    document.getElementById('bulletin1-counter').textContent = saved + " visits";
+    let saved = localStorage.getItem('bulletin2Counter') || '0';
+    document.getElementById('bulletin2-counter').textContent = saved + " visits";
 });
 </script>
     
