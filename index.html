@@ -848,9 +848,26 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('bulletin2-counter').textContent = saved + " visits";
 });
 </script>
-    
+  <script>
+function handleBulletin1Click(event) {
+    event.preventDefault();
+    let count = parseInt(localStorage.getItem('bulletin1Counter') || '0');
+    count++;
+    localStorage.setItem('bulletin1Counter', count);
+    document.getElementById('bulletin1-counter').textContent = count + " visits";
+    window.location = event.target.closest('a').href;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let saved = localStorage.getItem('bulletin1Counter') || '0';
+    document.getElementById('bulletin1-counter').textContent = saved + " visits";
+});
+</script>
+
 </body>
 </html>
+  
+
 
 
 
