@@ -444,20 +444,16 @@ td {
     opacity: 0.6;
 }
 /* ===== CIERRE VISUAL BULLETIN 2 (DEBAJO DEL CARRUSEL) ===== */
-#bulletin2 .bulletin-gallery::after {
+#bulletin2::after {
     content: "";
     display: block;
     width: 60%;
     height: 2px;
     margin: 35px auto 10px auto;
-    background: linear-gradient(
-        to right,
-        transparent,
-        #4c9bdc,
-        transparent
-    );
+    background: linear-gradient(to right, transparent, #4c9bdc, transparent);
     opacity: 0.6;
 }
+
 /* ===== IMÁGENES DE PORTADA (SOLO PORTADAS) ===== */
 #bulletin1 img.bulletin-img:first-of-type,
 #bulletin2 img.bulletin-img:first-of-type,
