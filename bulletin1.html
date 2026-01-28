@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Thames Valley Bulletin – Bulletin 1</title>
+<title>Bulletin 1 – Thames Valley Bulletin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -13,42 +13,12 @@ body {
     color: #222;
 }
 
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background: #0b3c5d;
-    padding: 14px 10px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-/* LAYOUT */
-.content-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 30px 10px;
-}
-
-.bulletin-column {
-    width: 100%;
-    max-width: 720px;
-}
-
-/* BULLETIN BOX */
-.bulletin-box {
+.container {
+    max-width: 800px;
+    margin: 40px auto;
     background: white;
+    padding: 30px;
     border-radius: 10px;
-    padding: 25px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -56,180 +26,106 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: #666;
-    margin-bottom: 5px;
 }
 
-h3 {
-    margin-top: 0;
+h1 {
+    margin-top: 5px;
 }
 
-.bulletin-subtitle {
+.subtitle {
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.bulletin-text {
+img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+ul {
     line-height: 1.6;
-    margin-bottom: 20px;
 }
 
-/* IMAGES */
-.bulletin-img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
+ul ul {
+    margin-top: 10px;
 }
 
-/* GALLERY */
-.bulletin-gallery {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.gallery-img {
-    display: none;
-    width: 100%;
-    border-radius: 8px;
-}
-
-.gallery-img.active {
-    display: block;
-}
-
-.gallery-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.6);
-    color: white;
-    border: none;
-    font-size: 22px;
-    padding: 6px 12px;
-    cursor: pointer;
-}
-
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
-
-/* CONCLUSION */
 .conclusion {
+    margin-top: 30px;
     background: #0b3c5d;
     color: white;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 25px;
-}
-
-.conclusion h4 {
-    margin-top: 0;
 }
 </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="bulletin1.html">Bulletin 1</a>
-    <a href="bulletin2.html">Bulletin 2</a>
-    <a href="bulletin3.html">Bulletin 3</a>
-</nav>
+<div class="container">
 
-<div class="content-wrapper">
-<div class="bulletin-column">
+<div class="bulletin-number">Bulletin 1</div>
 
-<!-- BULLETIN 1 -->
-<div id="bulletin1" class="bulletin-box">
+<h1>Environmental Crime in the Thames Valley</h1>
 
-    <div class="bulletin-number">Bulletin 1</div>
+<div class="subtitle">
+"Illegal infilling of the Thames flood plain"
+</div>
 
-    <h3>Environmental Crime in the Thames Valley</h3>
+<img src="frontpage-bulletin-1.png" alt="Flood plain overview">
 
-    <div class="bulletin-subtitle">
-        "Illegal infilling of the Thames flood plain"
-    </div>
-
-    <img src="frontpage-bulletin-1.png"
-         class="bulletin-img"
-         alt="Flood plain overview" />
-
-    <div class="bulletin-text">
+<ul>
+    <li>
+        <b>The Environment Agency (EA)</b> were immediately notified and a
+        <b>FOI Request (Freedom of Information)</b> asked if any permission to
+        infill the flood plain had been granted.
         <ul>
             <li>
-                <b>The Environment Agency (EA)</b> were immediately notified and a
-                <b>FOI Request (Freedom of Information)</b> asked if any permission to
-                infill the flood plain had been granted.
-                <ul>
-                    <li>
-                        The response was that <b>no permission was granted</b>
-                        (and never would be), so the land owners and the company
-                        supplying the waste have <b>illegally infilled the flood plain</b>.
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                The EA confirmed they visited the site and were told by the owners that
-                only drainage ditches were being dredged, while neighbours reported
-                <b>hundreds of lorries</b> coming and going over a <b>6-month period</b>.
-                <ul>
-                    <li>Since then, the EA have done nothing.</li>
-                </ul>
-            </li>
-
-            <li>
-                Cholsey Parish Council reported this to
-                <b>Oxfordshire County Council (OCC)</b>, who have subsequently done nothing.
-            </li>
-
-            <li>
-                The OCC were sent a FOI request at the end of 2025 but refuse to say
-                what, if any, action they are taking.
-            </li>
-
-            <li>
-                Had this infilling been done legally, it would have incurred
-                approximately <b>£250,000 in landfill tax</b>, revenue that would have been
-                welcome in the council’s budget for essential services.
+                The response was that <b>no permission was granted</b> (and never would be),
+                meaning the land owners and the company supplying the waste have
+                <b>illegally infilled the flood plain</b>.
             </li>
         </ul>
-    </div>
+    </li>
 
-    <div class="bulletin-gallery">
-        <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <li>
+        The EA confirmed they visited the site and were told by the owners that
+        only drainage ditches were being dredged, while neighbours reported
+        <b>hundreds of lorries</b> coming and going over a <b>six-month period</b>.
+        <ul>
+            <li>Since then, the EA have done nothing.</li>
+        </ul>
+    </li>
 
-        <img src="gallery-bulletin1-1.png" class="gallery-img active">
-        <img src="gallery-bulletin1-2.png" class="gallery-img">
-        <img src="gallery-bulletin1-3.png" class="gallery-img">
+    <li>
+        Cholsey Parish Council reported this to
+        <b>Oxfordshire County Council (OCC)</b>, who have subsequently done nothing.
+    </li>
 
-        <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
+    <li>
+        The OCC were sent a FOI request at the end of 2025 but refuse to say
+        what, if any, action they are taking.
+    </li>
 
-    <div class="conclusion">
-        <h4>Conclusion</h4>
-        <p>
-            The appropriate staff at Oxfordshire County Council responsible for
-            prosecuting such blatant criminal activity must explain to the people of
-            Oxfordshire what action is being taken and not hide behind the Freedom of
-            Information Act.
-        </p>
-    </div>
+    <li>
+        Had this infilling of the flood plain been carried out legally, it would
+        have incurred approximately <b>£250,000 in landfill tax</b>, revenue that
+        would have been a welcome contribution to the council’s budget.
+    </li>
+</ul>
+
+<div class="conclusion">
+    <h3>Conclusion</h3>
+    <p>
+        The appropriate staff at Oxfordshire County Council responsible for
+        prosecuting such blatant criminal activity must explain to the people of
+        Oxfordshire what action is being taken and not hide behind the Freedom of
+        Information Act.
+    </p>
+</div>
 
 </div>
-<!-- END BULLETIN 1 -->
-
-</div>
-</div>
-
-<script>
-let slideIndex = 0;
-function changeSlide(direction) {
-    const slides = document.querySelectorAll(".gallery-img");
-    slides[slideIndex].classList.remove("active");
-    slideIndex = (slideIndex + direction + slides.length) % slides.length;
-    slides[slideIndex].classList.add("active");
-}
-</script>
 
 </body>
 </html>
