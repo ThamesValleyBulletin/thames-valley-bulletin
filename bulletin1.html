@@ -334,9 +334,14 @@ backToTopBtn.addEventListener("click", () => {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://api.countapi.xyz/hit/thamesvalleybulletin/bulletin1");
+    // Incrementa la visita y muestra el valor en consola (opcional)
+    fetch("https://api.countapi.xyz/hit/thamesvalleybulletin/bulletin1")
+        .then(res => res.json())
+        .then(data => console.log("Bulletin 1 visits:", data.value))
+        .catch(() => console.log("Error counting visits for Bulletin 1"));
 });
 </script>
+
 
 
 </body>
