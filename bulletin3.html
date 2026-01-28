@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bulletin 3 | Thames Valley Bulletin</title>
+
+<link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
+<style>
+/* ===== ESTILOS IGUALES A BULLETIN 1 Y 2 ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,0.15), transparent 70%), #0f0f0f;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #4c9bdc;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.navbar a {
+    flex: 1;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover { color: #4c9bdc; }
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #4c9bdc;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.navbar a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.bulletin-box {
+    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #5a5a5a;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.bulletin-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+h3 { font-size: 28px; margin-bottom: 5px; }
+.bulletin-subtitle { font-size: 20px; color: #a0c4ff; margin-bottom: 18px; }
+.bulletin-text { line-height: 1.65; font-size: 17px; margin-top: 10px; }
+
+.bulletin-img {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+.conclusion-title {
+    color: #3b6cff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#backToTopWrapper {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+    display: none;
+}
+
+#backToTop {
+    width: 68px;
+    height: 68px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+#backToTop:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.7); }
+#backToTopWrapper .back-to-top-text { font-size: 12px; font-weight: bold; text-transform: uppercase; color: white; margin-top: 6px; text-align: center; }
+
+/* ===== CONTENIDO BLOQUEADO ===== */
+.coming-soon { position: relative; }
+.coming-soon .locked-content {
+    filter: blur(6px);
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+}
+.coming-soon::after {
+    content: "REPORT COMING SOON";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(15,15,15,0.85);
+    color: #4c9bdc;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid rgba(76,155,220,0.6);
+    text-transform: uppercase;
+    z-index: 5;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="bulletin1.html">Bulletin 1</a>
+  <a href="bulletin2.html">Bulletin 2</a>
+  <a href="bulletin3.html">Bulletin 3</a>
+</nav>
+
+<div class="container">
+<div class="bulletin-box">
+
+    <div class="coming-soon">
+        <div class="locked-content">
+
+            <div class="bulletin-number">Bulletin 3</div>
+
+            <h3>Police Waiting Lists</h3>
+
+            <div class="bulletin-subtitle">
+                "What the NHS counts daily — the police say they don't track"
+            </div>
+
+            <img src="front-page-bulletin-3.png"
+                 class="bulletin-img"
+                 alt="Police investigator reviewing case files and evidence" />
+
+            <div class="bulletin-text">
+                We have all heard of NHS waiting lists. They are a basic performance indicator, and the NHS knows, on a shift-by-shift basis, how many beds will become available and how many patients are waiting.
+
+                <blockquote class="highlighted-quote">
+                    Unlike the NHS, police investigation backlogs are not routinely tracked or published.
+                </blockquote>
+
+                By contrast, <b>Matthew Hogg, Chief Constable of Thames Valley Police</b>, claims not to know how many crimes have been reported for which no investigating officers are currently available. Yet, when questioned, frontline officers frequently refer to <b>very long waiting lists</b> of cases awaiting investigation.
+                <br><br>
+                A national <b>Freedom of Information (FOI)</b> survey will reveal the true scale of this issue, showing how stretched frontline policing has become. The findings will be summarised as <b>Police Waiting Lists</b> — a backlog that, unlike in the NHS, is <b>not routinely measured or published</b>.
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div id="backToTopWrapper">
+    <button id="backToTop">↑</button>
+    <div class="back-to-top-text">BACK TO TOP</div>
+</div>
+
+<script>
+const backToTopBtn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+    backToTopBtn.parentElement.style.display = (window.scrollY > 400) ? 'flex' : 'none';
+});
+backToTopBtn.addEventListener("click", () => { window.scrollTo({top:0,behavior:"smooth"}); });
+</script>
+
+</body>
+</html>
