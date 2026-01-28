@@ -640,7 +640,7 @@ td {
 <!-- ===== BOTONES ===== -->
 <div class="buttons-section">
     <div class="buttons-central">
-  <a href="bulletin1.html" class="bulletin-btn published" id="bulletin1-btn">
+<a href="bulletin1.html" class="bulletin-btn published" id="bulletin1-btn">
     <div class="bulletin-label">Bulletin 1</div>
     <div class="bulletin-title">We paid Crime Commissioner’s £180k of membership fees?</div>
     <span class="view-more">VIEW MORE</span>
@@ -737,34 +737,27 @@ backToTopBtn.addEventListener("click", () => {
 });
 </script>
 <script>
-function handleBulletin2Click(event) {
-    event.preventDefault();
-    let count = parseInt(localStorage.getItem('bulletin2Counter') || '0');
-    count++;
-    localStorage.setItem('bulletin2Counter', count);
-    document.getElementById('bulletin2-counter').textContent = count + " visits";
-    window.location = event.target.closest('a').href;
+// Función genérica para contadores con memoria
+function setupCounter(buttonId, counterId, pageUrl) {
+    const button = document.getElementById(buttonId);
+    const counter = document.getElementById(counterId);
+
+    // Cargar el contador guardado
+    let count = parseInt(localStorage.getItem(counterId) || '0');
+    counter.textContent = count + " visits";
+
+    // Incrementar contador al hacer clic y redirigir
+    button.addEventListener('click', function(e) {
+        count++;
+        localStorage.setItem(counterId, count);
+        counter.textContent = count + " visits";
+        window.location = pageUrl;
+    });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    let saved = localStorage.getItem('bulletin2Counter') || '0';
-    document.getElementById('bulletin2-counter').textContent = saved + " visits";
-});
-</script>
-  <script>
-function handleBulletin1Click(event) {
-    event.preventDefault();
-    let count = parseInt(localStorage.getItem('bulletin1Counter') || '0');
-    count++;
-    localStorage.setItem('bulletin1Counter', count);
-    document.getElementById('bulletin1-counter').textContent = count + " visits";
-    window.location = event.target.closest('a').href;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    let saved = localStorage.getItem('bulletin1Counter') || '0';
-    document.getElementById('bulletin1-counter').textContent = saved + " visits";
-});
+// Configuramos los botones
+setupCounter('bulletin1-btn', 'bulletin1-counter', 'bulletin1.html');
+setupCounter('bulletin2-btn', 'bulletin2-counter', 'bulletin2.html');
 </script>
 
 </body>
