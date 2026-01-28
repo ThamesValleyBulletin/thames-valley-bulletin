@@ -1,74 +1,270 @@
-<!-- BULLETIN 2 -->
-<div id="bulletin2" class="bulletin-box">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bulletin 2 | Thames Valley Bulletin</title>
 
-    <div class="bulletin-number">Bulletin 2</div>
+<link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+<link rel="manifest" href="favicon/site.webmanifest">
 
-    <h3>Is this one reason Cholsey had flooded more over the past few years?</h3>
+<style>
+/* ===== ESTILOS GENERALES IGUAL QUE BULLETIN 1 ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,0.15), transparent 70%), #0f0f0f;
+    color: white;
+    text-align: center;
+}
 
-    <div class="bulletin-subtitle">
-        Industrial Fly Tipping in Cholsey, South Oxfordshire
-    </div>
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #4c9bdc;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
 
-    <!-- IMAGEN PORTADA -->
-    <img src="frontpage-bulletin-2.png"
-         class="bulletin-img"
-         alt="Illegal dumping site overview" />
+.navbar a {
+    flex: 1;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
 
-    <div class="bulletin-text">
-        A million litres of rain water can’t escape down Cholsey Brook as fast as it used to, into the Thames flood plain, because of 1000’s of tons of illegal industrial fly tipping that took place in the flood plain between May 2020 and May 2021.
-        <br><br>
-        This is a clip from Google Earth clearly showing the infilling in progress, of 0.7m deep waste material. Put <b>OX10 9HG</b> into the Google Earth search tab and select years around 2020-2022.
-    </div>
+.navbar a:hover { color: #4c9bdc; }
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #4c9bdc;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.navbar a:hover::after { transform: scaleX(1); transform-origin: left; }
 
-    <!-- GALERÍA / CARRUSEL -->
-    <div class="bulletin-gallery">
-        <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+/* ===== CONTENIDO ===== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: left;
+}
 
-        <img src="gallery-bulletin2-2.png" class="gallery-img active" alt="Environmental evidence image 2">
-        <img src="gallery-bulletin2-3.png" class="gallery-img" alt="Environmental evidence image 3">
-        <img src="gallery-bulletin2-4.png" class="gallery-img" alt="Environmental evidence image 4">
+.bulletin-box {
+    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #5a5a5a;
+    position: relative;
+    margin-bottom: 50px;
+}
 
-        <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
+.bulletin-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
 
-    <!-- TEXTO FINAL ANTES DE CONCLUSIÓN -->
-    <div class="bulletin-text">
-        This illegal fly tipping not only exacerbates local flooding, but it also represents a clear failure of regulatory oversight. Residents deserve transparency and swift action to prevent further environmental damage and protect the community.
-    </div>
+h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
 
-    <!-- BLOQUE FINAL -->
-    <div class="bulletin-text">
-        <ul>
-            <li><b>The Environment Agency (EA)</b> were immediately notified and a FOI Request (Freedom of Information) asked if any permission to infill the flood plain had been granted.
-                <ul>
-                    <li>The response was no permission was granted for this (and never would be), so the land owners and the company that supplied the waste have infilled the flood plain illegally.</li>
-                </ul>
-            </li>
-            <li><b>The EA</b> confirmed that they had visited the site and were told by the owners that just the drainage ditches were being dredged, while neighbours reported hundreds of lorries coming and going over a 6-month period.
-                <ul>
-                    <li>Since then, the EA has done nothing.</li>
-                </ul>
-            </li>
-            <li><b>Cholsey Parish Council</b> reported this to Oxfordshire County Council who have subsequently done nothing.</li>
-            <li><b>The OCC</b> were sent a FOI request at the end of 2025 but refuse to say what, if any, action they are taking.</li>
-            <li>It appears both the land owners and the company supplying the waste (in unmarked lorries) have committed a crime.</li>
-            <li>Had this infilling of the flood plain been done legally then it would have incurred approx. £1/4 million in landfill tax, tax that would have been a welcome input into the council’s budget for desperately needed services.</li>
-            <li>This video shows the 2 adjacent properties where the Thames Flood Plain has been illegally infilled 0.7m high in one to stop flooding of the property.</li>
-        </ul>
+.bulletin-subtitle {
+    font-size: 20px;
+    color: #a0c4ff;
+    margin-bottom: 18px;
+}
 
-        <!-- VIDEO -->
-        <video width="100%" controls poster="trumbnail-bulletin2.png">
-            <source src="the-themes-valley-bulletin-2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+.bulletin-text {
+    line-height: 1.65;
+    font-size: 17px;
+    margin-top: 10px;
+}
 
-        <!-- CONCLUSIÓN -->
-        <div class="conclusion-title">Conclusion</div>
-        <ul class="bulletin-text">
-            <li>The appropriate staff at <b>Oxfordshire County Council</b> responsible for prosecuting such blatant criminal activity must explain to the people of Oxfordshire what they are doing about it and not try and hide behind the Freedom of Information Act.</li>
-            <li>In the meantime, the residents of the Thames Valley, especially <b>Cholsey</b>, may wish to e-mail <b>Oxfordshire County Council</b> at <a href="mailto:commentsandcomplaints@oxfordshire.gov.uk">commentsandcomplaints@oxfordshire.gov.uk</a> and ask the same question: Do they intend to prosecute this illegal action?</li>
-            <li>Interestingly, the owners that infilled the flood plain illegally will have problems when they come to sell their property if there is a £1/4 million tax bill outstanding or a potential prosecution where the penalty is to remove the infill and return the land to the floodplain.</li>
-            <li>Note: If there is no action soon on the part of OCC then perhaps those responsible, including the owners, the EA, and the Council, should be named.</li>
-        </ul>
-    </div>
+.bulletin-img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+    margin: 25px auto;
+    display: block;
+}
+
+.bulletin-gallery {
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.gallery-img {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-img.active {
+    display: block;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15,15,15,0.8);
+    color: #4c9bdc;
+    border: 1px solid #4c9bdc;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
+
+.conclusion-title {
+    color: #3b6cff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#backToTopWrapper {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+}
+
+#backToTop {
+    width: 68px;
+    height: 68px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#backToTopWrapper .back-to-top-text {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+    h3 { font-size: 24px; }
+    .bulletin-subtitle { font-size: 18px; }
+    .bulletin-text { font-size: 16px; }
+    #backToTop { width: 52px; height: 52px; font-size: 28px; }
+    #backToTopWrapper .back-to-top-text { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="bulletin1.html">Bulletin 1</a>
+  <a href="bulletin2.html">Bulletin 2</a>
+  <a href="bulletin3.html">Bulletin 3</a>
+</nav>
+
+<div class="container">
+<div class="bulletin-box">
+  <div class="bulletin-number">Bulletin 2</div>
+
+  <h3>Is this one reason Cholsey had flooded more over the past few years?</h3>
+  <div class="bulletin-subtitle">Industrial Fly Tipping in Cholsey, South Oxfordshire</div>
+
+  <img src="frontpage-bulletin-2.png" class="bulletin-img" alt="Illegal dumping site overview">
+
+  <div class="bulletin-text">
+    A million litres of rain water can’t escape down Cholsey Brook as fast as it used to, into the Thames flood plain, because of 1000’s of tons of illegal industrial fly tipping that took place in the flood plain between May 2020 and May 2021.
+    <br><br>
+    This is a clip from Google Earth clearly showing the infilling in progress, of 0.7m deep waste material. Put <b>OX10 9HG</b> into the Google Earth search tab and select years around 2020-2022.
+  </div>
+
+  <div class="bulletin-gallery">
+    <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <img src="gallery-bulletin2-2.png" class="gallery-img active" alt="">
+    <img src="gallery-bulletin2-3.png" class="gallery-img" alt="">
+    <img src="gallery-bulletin2-4.png" class="gallery-img" alt="">
+    <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+
+  <div class="bulletin-text">
+    This illegal fly tipping not only exacerbates local flooding, but it also represents a clear failure of regulatory oversight. Residents deserve transparency and swift action to prevent further environmental damage and protect the community.
+  </div>
+
+  <video width="100%" controls poster="trumbnail-bulletin2.png">
+      <source src="the-themes-valley-bulletin-2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+
+  <div class="conclusion-title">Conclusion</div>
+  <div class="bulletin-text">
+    <ul>
+      <li>The appropriate staff at <b>Oxfordshire County Council</b> must explain what they are doing.</li>
+      <li>Residents may e-mail <a href="mailto:commentsandcomplaints@oxfordshire.gov.uk">commentsandcomplaints@oxfordshire.gov.uk</a>.</li>
+      <li>If no action, EA, OCC and owners should be named.</li>
+    </ul>
+  </div>
+
 </div>
+</div>
+
+<div id="backToTopWrapper">
+    <button id="backToTop">↑</button>
+    <div class="back-to-top-text">BACK TO TOP</div>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.bulletin-gallery .gallery-img');
+function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+setInterval(() => changeSlide(1), 6000);
+
+const backToTopBtn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+    document.getElementById("backToTopWrapper").style.display = (window.scrollY > 400)? "flex" : "none";
+});
+backToTopBtn.addEventListener("click", ()=>{window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+
+</body>
+</html>
