@@ -738,19 +738,29 @@ backToTopBtn.addEventListener("click", () => {
 </script>
 <script>
 // Función que actualiza contador global usando CountAPI
-function updateCounter(buttonId, key, pageUrl) {
-    const counterSpan = document.getElementById(buttonId + "-counter");
+function updateCounter(buttonId, counterId, key, pageUrl) {
+    const button = document.getElementById(buttonId);
+    const counterSpan = document.getElementById(counterId);
 
-    // Incrementar contador al hacer clic
-    document.getElementById(buttonId).addEventListener('click', function() {
+    // Cargar valor al entrar
+    fetch(`https://api.countapi.xyz/get/thamesvalleybulletin/${key}`)
+        .then(res => res.json())
+        .then(data => {
+            counterSpan.textContent = (data.value || 0) + " visits";
+        });
+
+    // Incrementar al hacer click
+    button.addEventListener("click", function (e) {
+        e.preventDefault(); // ⬅️ CLAVE
+
         fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`)
             .then(res => res.json())
             .then(data => {
                 counterSpan.textContent = data.value + " visits";
-                window.location = pageUrl; // redirigir después de incrementar
-            })
-            .catch(err => console.error("CountAPI error:", err));
+                window.location.href = pageUrl;
+                   });
     });
+}
 
     // Cargar valor actual al iniciar
     fetch(`https://api.countapi.xyz/get/thamesvalleybulletin/${key}`)
@@ -762,9 +772,9 @@ function updateCounter(buttonId, key, pageUrl) {
 }
 
 // Configuramos los botones
-updateCounter('bulletin1-btn', 'bulletin1', 'bulletin1.html');
-updateCounter('bulletin2-btn', 'bulletin2', 'bulletin2.html');
-updateCounter('bulletin3-btn', 'bulletin3', 'bulletin3.html');
+updateCounter('bulletin1-btn', 'bulletin1-counter', 'bulletin1', 'bulletin1.html');
+updateCounter('bulletin2-btn', 'bulletin2-counter', 'bulletin2', 'bulletin2.html');
+
 </script>
 
 
