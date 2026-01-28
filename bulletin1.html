@@ -1,147 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bulletin 1 | Thames Valley Bulletin</title>
-
-<link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-<link rel="manifest" href="favicon/site.webmanifest">
+<meta charset="UTF-8">
+<title>Thames Valley Bulletin – Bulletin 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== ESTILOS GENERALES ===== */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background:
-        radial-gradient(ellipse at top, rgba(255,255,255,0.15), transparent 70%),
-        #0f0f0f;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
     display: flex;
-    justify-content: space-around;
-    background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #4c9bdc;
+    justify-content: center;
+    gap: 30px;
+    background: #0b3c5d;
+    padding: 14px 10px;
 }
 
 .navbar a {
-    flex: 1;
-    text-align: center;
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .navbar a:hover {
-    color: #4c9bdc;
+    text-decoration: underline;
 }
 
-/* ===== CONTENIDO ===== */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+/* LAYOUT */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
 }
 
+.bulletin-column {
+    width: 100%;
+    max-width: 720px;
+}
+
+/* BULLETIN BOX */
 .bulletin-box {
-    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
-    padding: 30px;
-    border-radius: 18px;
-    border: 1px solid #5a5a5a;
-    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .bulletin-number {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
-    padding: 5px 12px;
-    border-radius: 12px;
-    font-weight: bold;
     font-size: 14px;
-}
-
-h1 {
-    font-size: 36px;
+    font-weight: bold;
+    color: #666;
     margin-bottom: 5px;
 }
 
+h3 {
+    margin-top: 0;
+}
+
 .bulletin-subtitle {
-    font-size: 20px;
-    color: #a0c4ff;
+    font-style: italic;
     margin-bottom: 20px;
 }
 
 .bulletin-text {
-    font-size: 17px;
-    line-height: 1.65;
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
+/* IMAGES */
 .bulletin-img {
     width: 100%;
-    border-radius: 14px;
-    margin: 25px 0;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-.bulletin-img-small {
-    max-width: 420px;
-    display: block;
-    margin: 25px auto;
+/* GALLERY */
+.bulletin-gallery {
+    position: relative;
+    margin-bottom: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-}
-
-th {
-    background-color: #4c9bdc;
-    padding: 10px;
-}
-
-td {
-    padding: 10px;
-    border-bottom: 1px solid #cacbcd;
-}
-
-.conclusion-title {
-    color: #3b6cff;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-/* ===== BACK TO TOP ===== */
-#backToTopWrapper {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
+.gallery-img {
     display: none;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    border-radius: 8px;
 }
 
-#backToTop {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
+.gallery-img.active {
+    display: block;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
     color: white;
     border: none;
-    font-size: 30px;
+    font-size: 22px;
+    padding: 6px 12px;
     cursor: pointer;
+}
+
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
+
+/* CONCLUSION */
+.conclusion {
+    background: #0b3c5d;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.conclusion h4 {
+    margin-top: 0;
 }
 </style>
 </head>
@@ -149,68 +129,110 @@ td {
 <body>
 
 <nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="bulletin1.html">Bulletin 1</a>
-  <a href="bulletin2.html">Bulletin 2</a>
-  <a href="bulletin3.html">Bulletin 3</a>
+    <a href="index.html">Home</a>
+    <a href="bulletin1.html">Bulletin 1</a>
+    <a href="bulletin2.html">Bulletin 2</a>
+    <a href="bulletin3.html">Bulletin 3</a>
 </nav>
 
-<div class="container">
+<div class="content-wrapper">
+<div class="bulletin-column">
 
-<div class="bulletin-box">
-<div class="bulletin-number">Bulletin 1</div>
+<!-- BULLETIN 1 -->
+<div id="bulletin1" class="bulletin-box">
 
-<h1>Matthew Barber, Police and Crime Commissioner for the Thames Valley</h1>
+    <div class="bulletin-number">Bulletin 1</div>
 
-<div class="bulletin-subtitle">
-Transparency and accountability of membership fees
+    <h3>Environmental Crime in the Thames Valley</h3>
+
+    <div class="bulletin-subtitle">
+        "Illegal infilling of the Thames flood plain"
+    </div>
+
+    <img src="frontpage-bulletin-1.png"
+         class="bulletin-img"
+         alt="Flood plain overview" />
+
+    <div class="bulletin-text">
+        <ul>
+            <li>
+                <b>The Environment Agency (EA)</b> were immediately notified and a
+                <b>FOI Request (Freedom of Information)</b> asked if any permission to
+                infill the flood plain had been granted.
+                <ul>
+                    <li>
+                        The response was that <b>no permission was granted</b>
+                        (and never would be), so the land owners and the company
+                        supplying the waste have <b>illegally infilled the flood plain</b>.
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                The EA confirmed they visited the site and were told by the owners that
+                only drainage ditches were being dredged, while neighbours reported
+                <b>hundreds of lorries</b> coming and going over a <b>6-month period</b>.
+                <ul>
+                    <li>Since then, the EA have done nothing.</li>
+                </ul>
+            </li>
+
+            <li>
+                Cholsey Parish Council reported this to
+                <b>Oxfordshire County Council (OCC)</b>, who have subsequently done nothing.
+            </li>
+
+            <li>
+                The OCC were sent a FOI request at the end of 2025 but refuse to say
+                what, if any, action they are taking.
+            </li>
+
+            <li>
+                Had this infilling been done legally, it would have incurred
+                approximately <b>£250,000 in landfill tax</b>, revenue that would have been
+                welcome in the council’s budget for essential services.
+            </li>
+        </ul>
+    </div>
+
+    <div class="bulletin-gallery">
+        <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+
+        <img src="gallery-bulletin1-1.png" class="gallery-img active">
+        <img src="gallery-bulletin1-2.png" class="gallery-img">
+        <img src="gallery-bulletin1-3.png" class="gallery-img">
+
+        <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="conclusion">
+        <h4>Conclusion</h4>
+        <p>
+            The appropriate staff at Oxfordshire County Council responsible for
+            prosecuting such blatant criminal activity must explain to the people of
+            Oxfordshire what action is being taken and not hide behind the Freedom of
+            Information Act.
+        </p>
+    </div>
+
 </div>
-
-<img src="bulletin.1.1.png" class="bulletin-img" alt="Bulletin 1 Image">
-
-<div class="bulletin-text">
-The <b>Association of Police and Crime Commissioners (APCC)</b> has 33 PCCs as members and is registered as a member’s club.
-A FOI request was sent to this organisation, all of whose members are <b>public servants</b>, requesting full accounts.  
-This request was refused and upheld by the <b>Information Commissioner’s Office</b>.
-</div>
-
-<table>
-<tr><th>Year</th><th>Amount (£)</th></tr>
-<tr><td>2021/22</td><td>33,387.54</td></tr>
-<tr><td>2022/23</td><td>2,000.00</td></tr>
-<tr><td>2023/24</td><td>41,762.79</td></tr>
-<tr><td>2024/25</td><td>51,500.00</td></tr>
-<tr><td>2025/26</td><td>52,445.00</td></tr>
-</table>
-
-<div class="bulletin-text">
-Considering the substantial nature of these payments, a further FOI request was made asking <b>Matthew Barber</b> to supply a copy of the APCC accounts.  
-To date, he has refused.
-</div>
-
-<img src="bulletin-1-thethamesvalley-2.png" class="bulletin-img-small" alt="APCC documents">
-
-<div class="conclusion-title">Conclusion</div>
-
-<div class="bulletin-text">
-<b>Matthew Barber</b> should publish the full APCC accounts for the past five years or return the membership fees so that they may be used to address crime investigation backlogs in the Thames Valley.
-</div>
+<!-- END BULLETIN 1 -->
 
 </div>
-</div>
-
-<div id="backToTopWrapper">
-<button id="backToTop">↑</button>
 </div>
 
 <script>
-const backToTop = document.getElementById("backToTopWrapper");
-window.addEventListener("scroll", () => {
-    backToTop.style.display = window.scrollY > 400 ? "flex" : "none";
-});
-document.getElementById("backToTop").onclick = () =>
-    window.scrollTo({ top: 0, behavior: "smooth" });
+let slideIndex = 0;
+function changeSlide(direction) {
+    const slides = document.querySelectorAll(".gallery-img");
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + direction + slides.length) % slides.length;
+    slides[slideIndex].classList.add("active");
+}
 </script>
 
 </body>
 </html>
+
+
+
