@@ -300,11 +300,27 @@ function changeSlide(n) {
     showSlide(slideIndex);
 }
 </script>
-<script>
+
+    <script>
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://api.countapi.xyz/hit/thamesvalleybulletin/bulletin2");
+    const API_BASE = "https://api.counterapi.dev/v2/the-thame-valley-bulletins-team-2667/first-counter-2667";
+    const API_KEY = "YOUR_API_KEY"; // <-- Pon tu API Key
+
+    const counterId = "bulletin1-counter"; // Este es Bulletin 1
+
+    const counterElem = document.getElementById(counterId);
+    if (!counterElem) return;
+
+    fetch(`${API_BASE}/up`, {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${API_KEY}` }
+    })
+    .then(res => res.json())
+    .then(data => counterElem.textContent = `${data.value} visits`)
+    .catch(() => counterElem.textContent = "— visits");
 });
 </script>
+
 
 </body>
 </html>
