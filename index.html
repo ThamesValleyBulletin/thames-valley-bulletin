@@ -737,37 +737,40 @@ backToTopBtn.addEventListener("click", () => {
 });
 </script>
 <script>
-function updateCounter(buttonId, counterId, key, pageUrl) {
-    const button = document.getElementById(buttonId);
-    const counterSpan = document.getElementById(counterId);
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (!button || !counterSpan) return;
+    function updateCounter(buttonId, counterId, key, pageUrl) {
+        const button = document.getElementById(buttonId);
+        const counterSpan = document.getElementById(counterId);
 
-    // Cargar valor al entrar
-    fetch(`https://api.countapi.xyz/get/thamesvalleybulletin/${key}`)
-        .then(res => res.json())
-        .then(data => {
-            counterSpan.textContent = (data.value || 0) + " visits";
-        })
-        .catch(err => console.error(err));
+        if (!button || !counterSpan) return;
 
-    // Incrementar al hacer click
-    button.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`)
+        // Mostrar contador al cargar
+        fetch(`https://api.countapi.xyz/get/thamesvalleybulletin/${key}`)
             .then(res => res.json())
             .then(data => {
-                counterSpan.textContent = data.value + " visits";
-                window.location.href = pageUrl;
+                counterSpan.textContent = (data.value || 0) + " visits";
             })
-            .catch(err => console.error(err));
-    });
-}
+            .catch(() => {
+                counterSpan.textContent = "— visits";
+            });
 
-// Inicializar contadores
-updateCounter('bulletin1-btn', 'bulletin1-counter', 'bulletin1', 'bulletin1.html');
-updateCounter('bulletin2-btn', 'bulletin2-counter', 'bulletin2', 'bulletin2.html');
+        // Click
+        button.addEventListener("click", () => {
+
+            // Incrementar SIN bloquear navegación
+            fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`)
+                .catch(() => {});
+
+            // Navegar SIEMPRE
+            window.location.href = pageUrl;
+        });
+    }
+
+    updateCounter("bulletin1-btn", "bulletin1-counter", "bulletin1", "bulletin1.html");
+    updateCounter("bulletin2-btn", "bulletin2-counter", "bulletin2", "bulletin2.html");
+
+});
 </script>
 
 
