@@ -737,28 +737,37 @@ backToTopBtn.addEventListener("click", () => {
 });
 </script>
 <script>
-// Función genérica para contadores con memoria
-function setupCounter(buttonId, counterId, pageUrl) {
-    const button = document.getElementById(buttonId);
-    const counter = document.getElementById(counterId);
+<script>
+// Función que actualiza contador global usando CountAPI
+function updateCounter(buttonId, key, pageUrl) {
+    const counterSpan = document.getElementById(buttonId + "-counter");
 
-    // Cargar el contador guardado
-    let count = parseInt(localStorage.getItem(counterId) || '0');
-    counter.textContent = count + " visits";
-
-    // Incrementar contador al hacer clic y redirigir
-    button.addEventListener('click', function(e) {
-        count++;
-        localStorage.setItem(counterId, count);
-        counter.textContent = count + " visits";
-        window.location = pageUrl;
+    // Incrementar contador al hacer clic
+    document.getElementById(buttonId).addEventListener('click', function() {
+        fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`)
+            .then(res => res.json())
+            .then(data => {
+                counterSpan.textContent = data.value + " visits";
+                window.location = pageUrl; // redirigir después de incrementar
+            })
+            .catch(err => console.error("CountAPI error:", err));
     });
+
+    // Cargar valor actual al iniciar
+    fetch(`https://api.countapi.xyz/get/thamesvalleybulletin/${key}`)
+        .then(res => res.json())
+        .then(data => {
+            counterSpan.textContent = data.value + " visits";
+        })
+        .catch(err => console.error("CountAPI error:", err));
 }
 
 // Configuramos los botones
-setupCounter('bulletin1-btn', 'bulletin1-counter', 'bulletin1.html');
-setupCounter('bulletin2-btn', 'bulletin2-counter', 'bulletin2.html');
+updateCounter('bulletin1-btn', 'bulletin1', 'bulletin1.html');
+updateCounter('bulletin2-btn', 'bulletin2', 'bulletin2.html');
+updateCounter('bulletin3-btn', 'bulletin3', 'bulletin3.html');
 </script>
+
 
 </body>
 </html>
