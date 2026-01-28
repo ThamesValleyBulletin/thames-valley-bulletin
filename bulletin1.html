@@ -1,62 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Bulletin 1 – Thames Valley Bulletin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bulletin 1 | Thames Valley Bulletin</title>
+
+<link rel="icon" href="favicon/favicon.ico">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+<link rel="manifest" href="favicon/site.webmanifest">
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,0.15), transparent 70%), #0f0f0f;
+    color: white;
+    text-align: left;
 }
 
 .container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 95%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.bulletin-box {
+    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #5a5a5a;
+    margin-bottom: 50px;
+    position: relative;
 }
 
 .bulletin-number {
-    font-size: 14px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
+    padding: 5px 12px;
+    border-radius: 12px;
     font-weight: bold;
-    color: #666;
+    font-size: 14px;
 }
 
-h1 {
-    margin-top: 5px;
+h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
 }
 
-.subtitle {
-    font-style: italic;
-    margin-bottom: 25px;
+.bulletin-subtitle {
+    font-size: 20px;
+    color: #a0c4ff;
+    margin-bottom: 18px;
 }
 
-img {
-    width: 100%;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-ul {
-    line-height: 1.6;
-}
-
-ul ul {
+.bulletin-text {
+    line-height: 1.65;
+    font-size: 17px;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.conclusion {
-    margin-top: 30px;
-    background: #0b3c5d;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
+.bulletin-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+.bulletin-img-small {
+    max-width: 420px;
+    margin: 20px auto;
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 17px;
+}
+
+th {
+    background-color: #4c9bdc;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #cacbcd;
+}
+
+.conclusion-title {
+    color: #3b6cff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 25px;
 }
 </style>
 </head>
@@ -65,64 +106,48 @@ ul ul {
 
 <div class="container">
 
+<div class="bulletin-box">
 <div class="bulletin-number">Bulletin 1</div>
 
-<h1>Environmental Crime in the Thames Valley</h1>
+<h3>Matthew Barber, Police and Crime Commissioner for the Thames Valley</h3>
 
-<div class="subtitle">
-"Illegal infilling of the Thames flood plain"
+<div class="bulletin-subtitle">
+Transparency and accountability of membership fees
 </div>
 
-<img src="frontpage-bulletin-1.png" alt="Flood plain overview">
+<img src="bulletin.1.1.png" class="bulletin-img" alt="Bulletin 1 Image">
 
-<ul>
-    <li>
-        <b>The Environment Agency (EA)</b> were immediately notified and a
-        <b>FOI Request (Freedom of Information)</b> asked if any permission to
-        infill the flood plain had been granted.
-        <ul>
-            <li>
-                The response was that <b>no permission was granted</b> (and never would be),
-                meaning the land owners and the company supplying the waste have
-                <b>illegally infilled the flood plain</b>.
-            </li>
-        </ul>
-    </li>
+<div class="bulletin-text">
+The <b>Association of Police and Crime Commissioners (APCC)</b> has 33 PCCs as members and is registered as a member’s club. A FOI Act request was sent to this organisation, all of whose 33 members are <b>public servants</b>, asking to see a copy of their full accounts. This request was refused.
+The <b>Information Commissioner’s Office</b> upheld this, stating that under the FOI Act, a member’s club was not required to respond.
+A FOI request was then sent to <b>Matthew Barber</b> asking how much he had paid over the past 5 years in membership fees to his members club, out of <b>taxpayers’ funds</b>.
+</div>
 
-    <li>
-        The EA confirmed they visited the site and were told by the owners that
-        only drainage ditches were being dredged, while neighbours reported
-        <b>hundreds of lorries</b> coming and going over a <b>six-month period</b>.
-        <ul>
-            <li>Since then, the EA have done nothing.</li>
-        </ul>
-    </li>
+<table>
+<tr><th>Year</th><th>Amount (£)</th></tr>
+<tr><td>2021/22</td><td>33,387.54</td></tr>
+<tr><td>2022/23</td><td>2,000.00</td></tr>
+<tr><td>2023/24</td><td>41,762.79</td></tr>
+<tr><td>2024/25</td><td>51,500.00</td></tr>
+<tr><td>2025/25</td><td>52,445.00</td></tr>
+</table>
 
-    <li>
-        Cholsey Parish Council reported this to
-        <b>Oxfordshire County Council (OCC)</b>, who have subsequently done nothing.
-    </li>
+<div class="bulletin-text">
+Considering the substantial nature of these payments, a FOI request was sent to <b>Matthew Barber</b> asking him to supply a copy of the full APCC accounts. As an elected member, he would be issued with them annually to sign off, and he would reasonably wish to know how <b>Thames Valley taxpayers’ money</b> was being spent.
+<br><br>
+To date, he has refused to answer the request. However, he did attend the National Rural Crime Network’s <b>“Rural Crime Conference”</b> this year. The NRCN is a trading arm of the APCC, and the event was held at the Institute of Directors in Pall Mall — no doubt selected as a very rural, inexpensive, and centrally located setting.
+</div>
 
-    <li>
-        The OCC were sent a FOI request at the end of 2025 but refuse to say
-        what, if any, action they are taking.
-    </li>
+<img src="bulletin-1-thethamesvalley-2.png" class="bulletin-img-small" alt="Documents and financial information">
 
-    <li>
-        Had this infilling of the flood plain been carried out legally, it would
-        have incurred approximately <b>£250,000 in landfill tax</b>, revenue that
-        would have been a welcome contribution to the council’s budget.
-    </li>
-</ul>
+<div class="conclusion-title">Conclusion</div>
 
-<div class="conclusion">
-    <h3>Conclusion</h3>
-    <p>
-        The appropriate staff at Oxfordshire County Council responsible for
-        prosecuting such blatant criminal activity must explain to the people of
-        Oxfordshire what action is being taken and not hide behind the Freedom of
-        Information Act.
-    </p>
+<div class="bulletin-text">
+<b>Matthew Barber</b> should publish a copy of the full accounts of the APCC for the past 5 years, to justify the use of millions of pounds of taxpayers’ money. <b>Thames Valley taxpayers</b>, as well as taxpayers across the rest of the country, can then see how their money is being accounted for.
+<br><br>
+Otherwise, he should arrange for all membership fees to be returned for the use of the <b>Chief Constable of the Thames Valley, Matthew Hogg</b>, to begin addressing the long crime waiting lists by employing more officers to investigate crime.
+</div>
+
 </div>
 
 </div>
