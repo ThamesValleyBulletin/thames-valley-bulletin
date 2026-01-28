@@ -740,37 +740,35 @@ backToTopBtn.addEventListener("click", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    // API Base y Bearer Token
     const API_BASE = "https://api.counterapi.dev/v2/the-thame-valley-bulletins-team-2667/first-counter-2667";
-    const API_KEY = "YOUR_API_KEY"; // <-- Pon tu API Key aquí
+    const API_KEY = "YOUR_API_KEY"; // <-- Pon aquí tu API Key
 
-    // Función para actualizar contador en el HTML
     async function updateCounter(counterId) {
         const counterElem = document.getElementById(counterId);
         if (!counterElem) return;
 
         try {
-            // Incrementar contador
-            const resUp = await fetch(`${API_BASE}/up`, {
+            // Incrementa el contador
+            const res = await fetch(`${API_BASE}/up`, {
                 method: "POST",
                 headers: { "Authorization": `Bearer ${API_KEY}` }
             });
-            const dataUp = await resUp.json();
+            const data = await res.json();
 
             // Mostrar valor actualizado
-            counterElem.textContent = `${dataUp.value} visits`;
+            counterElem.textContent = `${data.value} visits`;
         } catch (err) {
             console.error("Error updating counter:", err);
             counterElem.textContent = "— visits";
         }
     }
 
-    // Actualizar todos los contadores existentes en la página
+    // Lista de todos los contadores de boletín que quieres actualizar
     const counters = ["bulletin1-counter", "bulletin2-counter"];
     counters.forEach(id => updateCounter(id));
-
 });
 </script>
+
 
 </body>
 </html>
