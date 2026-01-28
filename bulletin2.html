@@ -3,41 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Thames Valley Bulletin 2</title>
+<title>Bulletin 2 | Thames Valley Bulletin</title>
 
 <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
 <link rel="manifest" href="favicon/site.webmanifest">
 
 <style>
-/* ===== BASE Y HERO ===== */
+/* ===== ESTILOS GENERALES ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background:
-        radial-gradient(ellipse at top, rgba(255,255,255,0.15), transparent 70%),
-        #0f0f0f;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,0.15), transparent 70%), #0f0f0f;
     color: white;
     text-align: center;
 }
 
-.hero {
-    background: 
-        linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.75)),
-        url("thethamesvalley-landscape.png") center/cover no-repeat;
-    padding: 50px 20px 90px 20px;
-}
-
-img.logo {
-    display: block;
-    margin: 0 auto 25px auto;
-    width: 160px;
-}
-
-h1 { font-size: 44px; color: #e2e8f0; margin-bottom: 10px; }
-h2 { font-size: 32px; color: #a0c4e2; margin-bottom: 10px; }
-
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR IGUAL HOME ===== */
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -77,67 +59,21 @@ h2 { font-size: 32px; color: #a0c4e2; margin-bottom: 10px; }
 }
 .navbar a:hover::after { transform: scaleX(1); transform-origin: left; }
 
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; }
-    .navbar a { flex: none; padding: 10px 0; }
-}
-
-/* ===== BOTONES ===== */
-.buttons-central {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: -60px;
-}
-
-.bulletin-btn {
-    flex: 1;
-    min-width: 240px;
-    max-width: 280px;
-    background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #5a5a5a;
-    text-decoration: none;
-    color: #f5f5f5;
-}
-
-.bulletin-btn.published {
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
-    border: 1px solid #3b6cff;
-}
-
-.bulletin-label { color: #4c9bdc; font-size: 18px; margin-bottom: 8px; }
-.bulletin-btn.published .bulletin-label { color: white; }
-
-.bulletin-title { font-size: 22px; font-weight: bold; margin-bottom: 15px; }
-.view-more {
-    display: inline-block;
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
-    padding: 10px 20px;
-    border-radius: 12px;
-    margin-top: 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 /* ===== CONTENIDO ===== */
-.container { width: 95%; max-width: 1100px; margin: auto; padding-top: 40px; }
-.content-wrapper { display: flex; justify-content: center; }
-.bulletin-column { width: 100%; max-width: 700px; text-align: left; }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: left;
+}
 
 .bulletin-box {
     background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
-    padding: 25px;
+    padding: 30px;
     border-radius: 18px;
     border: 1px solid #5a5a5a;
-    margin-bottom: 50px;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .bulletin-number {
@@ -151,38 +87,50 @@ h2 { font-size: 32px; color: #a0c4e2; margin-bottom: 10px; }
     font-size: 14px;
 }
 
-.bulletin-box h3 { font-size: 28px; margin-bottom: 5px; }
-.bulletin-subtitle { font-size: 20px; color: #a0c4ff; margin-bottom: 18px; }
-.bulletin-text { line-height: 1.65; font-size: 17px; margin-top: 10px; }
-.bulletin-img { width: 100%; border-radius: 10px; margin: 20px 0; }
-.bulletin-img-small { max-width: 420px; margin: 20px auto; display: block; }
+h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
 
-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 17px; }
+.bulletin-subtitle {
+    font-size: 20px;
+    color: #a0c4ff;
+    margin-bottom: 18px;
+}
+
+.bulletin-text {
+    line-height: 1.65;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.bulletin-img, .bulletin-img-small {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+.bulletin-img-small { max-width: 420px; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 17px;
+}
+
 th { background-color: #4c9bdc; padding: 10px; }
 td { padding: 10px; border-bottom: 1px solid #cacbcd; }
 
-.conclusion-title { color: #3b6cff; font-size: 24px; font-weight: bold; margin-top: 25px; }
-
-/* ===== GALERÍA ===== */
-.bulletin-gallery { position: relative; width: 100%; margin: 25px 0; }
-.gallery-img { display: none; width: 100%; border-radius: 10px; border: none; }
-.gallery-img.active { display: block; }
-
-.gallery-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(15,15,15,0.8);
-    color: #4c9bdc;
-    border: 1px solid #4c9bdc;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    font-size: 18px;
+.conclusion-title {
+    color: #3b6cff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
 }
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
 
 /* ===== BACK TO TOP ===== */
 #backToTopWrapper {
@@ -193,6 +141,7 @@ td { padding: 10px; border-bottom: 1px solid #cacbcd; }
     flex-direction: column;
     align-items: center;
     z-index: 999;
+    display: none;
 }
 #backToTop {
     width: 68px;
@@ -216,12 +165,25 @@ td { padding: 10px; border-bottom: 1px solid #cacbcd; }
     margin-top: 6px;
     text-align: center;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container { padding: 20px 10px; }
+    h3 { font-size: 24px; }
+    .bulletin-subtitle { font-size: 18px; }
+    .bulletin-text { font-size: 16px; }
+    .bulletin-img { max-width: 100%; }
+    .bulletin-img-small { max-width: 90%; }
+    #backToTopWrapper { bottom: 18px; right: 18px; }
+    #backToTop { width: 52px; height: 52px; font-size: 28px; }
+    #backToTopWrapper .back-to-top-text { font-size: 10px; }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <a href="index.html">Home</a>
   <a href="bulletin1.html">Bulletin 1</a>
@@ -229,51 +191,20 @@ td { padding: 10px; border-bottom: 1px solid #cacbcd; }
   <a href="bulletin3.html">Bulletin 3</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-    <img class="logo" src="the-thame-valley-bulletin-WB.png" alt="Logo" />
-    <h1>THE THAMES VALLEY BULLETIN</h1>
-    <h2>Industrial fly tipping in Cholsey</h2>
-</div>
+<div class="container">
 
-<!-- BOTONES -->
-<div class="buttons-central">
-    <a href="bulletin1.html" class="bulletin-btn published">
-        <div class="bulletin-label">Bulletin 1</div>
-        <div class="bulletin-title">We paid Crime Commissioner’s £180k of membership fees?</div>
-    </a>
-    <a href="bulletin2.html" class="bulletin-btn published">
-        <div class="bulletin-label">Bulletin 2</div>
-        <div class="bulletin-title">Industrial fly tipping in Cholsey</div>
-    </a>
-    <a href="bulletin3.html" class="bulletin-btn">
-        <div class="bulletin-label">Bulletin 3</div>
-        <div class="bulletin-title">NHS Problem? Victim’s on TVP waiting lists</div>
-    </a>
-</div>
-
-<!-- CONTENIDO BULLETIN 2 -->
-<div class="content-wrapper">
-<div class="bulletin-column">
-<div id="bulletin2" class="bulletin-box">
+<div class="bulletin-box">
 <div class="bulletin-number">Bulletin 2</div>
+
 <h3>Is this one reason Cholsey had flooded more over the past few years?</h3>
 <div class="bulletin-subtitle">Industrial Fly Tipping in Cholsey, South Oxfordshire</div>
 
-<img src="frontpage-bulletin-2.png" class="bulletin-img" alt="Illegal dumping site overview" />
+<img src="frontpage-bulletin-2.png" class="bulletin-img" alt="Illegal dumping site overview">
 
 <div class="bulletin-text">
 A million litres of rain water can’t escape down Cholsey Brook as fast as it used to, into the Thames flood plain, because of 1000’s of tons of illegal industrial fly tipping that took place in the flood plain between May 2020 and May 2021.
 <br><br>
 This is a clip from Google Earth clearly showing the infilling in progress, of 0.7m deep waste material. Put <b>OX10 9HG</b> into the Google Earth search tab and select years around 2020-2022.
-</div>
-
-<div class="bulletin-gallery">
-    <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-    <img src="gallery-bulletin2-2.png" class="gallery-img active" alt="Environmental evidence image 2">
-    <img src="gallery-bulletin2-3.png" class="gallery-img" alt="Environmental evidence image 3">
-    <img src="gallery-bulletin2-4.png" class="gallery-img" alt="Environmental evidence image 4">
-    <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
 </div>
 
 <div class="bulletin-text">
@@ -286,6 +217,7 @@ This is a clip from Google Earth clearly showing the infilling in progress, of 0
 <li>Infilling would have cost ~£1/4 million landfill tax legally.</li>
 <li>Video shows properties with illegal infill.</li>
 </ul>
+</div>
 
 <video width="100%" controls poster="trumbnail-bulletin2.png">
     <source src="the-themes-valley-bulletin-2.mp4" type="video/mp4">
@@ -293,7 +225,8 @@ This is a clip from Google Earth clearly showing the infilling in progress, of 0
 </video>
 
 <div class="conclusion-title">Conclusion</div>
-<ul class="bulletin-text">
+<div class="bulletin-text">
+<ul>
 <li>The appropriate staff at <b>OCC</b> must explain actions.</li>
 <li>Residents may e-mail <a href="mailto:commentsandcomplaints@oxfordshire.gov.uk">commentsandcomplaints@oxfordshire.gov.uk</a>.</li>
 <li>Owners may face tax bills or prosecution when selling property.</li>
@@ -301,27 +234,17 @@ This is a clip from Google Earth clearly showing the infilling in progress, of 0
 </ul>
 </div>
 
-</div>
-</div>
-</div>
+</div> <!-- FIN bulletin-box -->
 
-<!-- BACK TO TOP -->
+</div> <!-- FIN container -->
+
+<!-- ===== BACK TO TOP ===== -->
 <div id="backToTopWrapper">
     <button id="backToTop">↑</button>
     <div class="back-to-top-text">BACK TO TOP</div>
 </div>
 
 <script>
-// Gallery
-let currentSlide = 0;
-const slides = document.querySelectorAll('#bulletin2 .gallery-img');
-function changeSlide(direction){
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-}
-setInterval(()=>{changeSlide(1)},6000);
-
 // Back to top
 const backToTopBtn = document.getElementById("backToTop");
 window.addEventListener("scroll", () => {
@@ -332,3 +255,4 @@ backToTopBtn.addEventListener("click", ()=>{window.scrollTo({top:0,behavior:"smo
 
 </body>
 </html>
+
