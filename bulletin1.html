@@ -36,6 +36,7 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
@@ -89,7 +90,7 @@ h1 {
 /* ===== IMÁGENES ===== */
 .bulletin-img {
     width: 100%;
-    max-width: 800px; /* Limita el tamaño de la imagen en pantallas grandes */
+    max-width: 800px;
     display: block;
     margin: 25px auto;
     border-radius: 14px;
@@ -98,8 +99,11 @@ h1 {
 
 .bulletin-img-small {
     max-width: 420px;
+    width: 100%;
     display: block;
     margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 /* ===== TABLAS ===== */
@@ -138,6 +142,10 @@ td {
 }
 
 #backToTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -146,6 +154,11 @@ td {
     border: none;
     font-size: 30px;
     cursor: pointer;
+}
+
+#backToTop span {
+    font-size: 12px;
+    margin-top: 2px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -164,6 +177,9 @@ td {
     }
     .bulletin-img {
         max-width: 100%;
+    }
+    .bulletin-img-small {
+        max-width: 90%;
     }
 }
 </style>
@@ -235,7 +251,7 @@ Otherwise, he should arrange for all membership fees to be returned for the use 
 
 <!-- ===== BACK TO TOP ===== -->
 <div id="backToTopWrapper">
-<button id="backToTop">↑</button>
+<button id="backToTop">↑<span>Back to the Top</span></button>
 </div>
 
 <script>
