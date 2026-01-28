@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Thames Valley Bulletin 2</title>
+<title>Bulletin 2 | Thames Valley Bulletin</title>
 
 <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
 <link rel="manifest" href="favicon/site.webmanifest">
 
 <style>
-/* ===== ESTILOS GENERALES ===== */
+/* ===== ESTILOS IGUAL QUE BULLETIN 1 ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,57 +18,6 @@ body {
     color: white;
     text-align: center;
 }
-
-h1 { font-size: 44px; color: #e2e8f0; margin-bottom: 10px; }
-h2 { font-size: 32px; color: #a0c4e2; margin: 0 0 10px 0; }
-h3 { font-size: 28px; margin-bottom: 5px; }
-p, li { font-size: 17px; line-height: 1.65; text-align: left; margin-top: 10px; }
-
-img { max-width: 100%; border-radius: 10px; }
-
-.bulletin-box {
-    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
-    padding: 25px;
-    border-radius: 18px;
-    border: 1px solid #5a5a5a;
-    margin: 40px auto;
-    max-width: 900px;
-    position: relative;
-}
-
-.bulletin-number {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
-    padding: 5px 12px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.bulletin-subtitle { font-size: 20px; color: #a0c4ff; margin-bottom: 18px; }
-
-.bulletin-gallery { position: relative; width: 100%; margin: 25px 0; }
-.gallery-img { display: none; width: 100%; border-radius: 10px; }
-.gallery-img.active { display: block; }
-.gallery-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(15,15,15,0.8);
-    color: #4c9bdc;
-    border: 1px solid #4c9bdc;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    font-size: 18px;
-}
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
-
-.conclusion-title { color: #3b6cff; font-size: 24px; font-weight: bold; margin-top: 25px; }
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -82,6 +31,7 @@ img { max-width: 100%; border-radius: 10px; }
     border-bottom: 1px solid #4c9bdc;
     font-family: 'Segoe UI', Tahoma, sans-serif;
 }
+
 .navbar a {
     flex: 1;
     text-align: center;
@@ -93,6 +43,7 @@ img { max-width: 100%; border-radius: 10px; }
     padding: 5px 0;
     transition: color 0.3s ease;
 }
+
 .navbar a:hover { color: #4c9bdc; }
 .navbar a::after {
     content: "";
@@ -112,10 +63,139 @@ img { max-width: 100%; border-radius: 10px; }
     .navbar { flex-direction: column; }
     .navbar a { flex: none; padding: 10px 0; }
 }
+
+/* ===== CONTENIDO ===== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.bulletin-box {
+    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #5a5a5a;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.bulletin-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.bulletin-subtitle {
+    font-size: 20px;
+    color: #a0c4ff;
+    margin-bottom: 18px;
+}
+
+.bulletin-text {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.bulletin-img {
+    width: 100%;
+    display: block;
+    margin: 25px auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+/* ===== GALERÍA ===== */
+.bulletin-gallery {
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.gallery-img {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-img.active {
+    display: block;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15,15,15,0.8);
+    color: #4c9bdc;
+    border: 1px solid #4c9bdc;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
+
+/* ===== CONCLUSIÓN ===== */
+.conclusion-title {
+    color: #3b6cff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* ===== BACK TO TOP ===== */
+#backToTopWrapper {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+}
+#backToTop {
+    width: 68px;
+    height: 68px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#backToTopWrapper .back-to-top-text {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 6px;
+}
+@media (max-width: 768px) {
+    #backToTop { width: 52px; height: 52px; font-size: 28px; }
+    #backToTopWrapper .back-to-top-text { font-size: 10px; }
+}
 </style>
 </head>
 
 <body>
+
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <a href="index.html">Home</a>
@@ -124,24 +204,17 @@ img { max-width: 100%; border-radius: 10px; }
   <a href="bulletin3.html">Bulletin 3</a>
 </nav>
 
-<!-- ===== HERO ===== -->
-<div class="hero" style="background: linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.75)), url('thethamesvalley-landscape.png') center/cover no-repeat; padding:50px 20px 90px 20px;">
-    <img class="logo" src="the-thame-valley-bulletin-WB.png" alt="Logo" />
-    <h1>THE THAMES VALLEY BULLETIN</h1>
-    <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
-</div>
+<div class="container">
 
 <!-- ===== BULLETIN 2 ===== -->
-<div id="bulletin2" class="bulletin-box">
+<div class="bulletin-box">
     <div class="bulletin-number">Bulletin 2</div>
 
     <h3>Is this one reason Cholsey had flooded more over the past few years?</h3>
     <div class="bulletin-subtitle">Industrial Fly Tipping in Cholsey, South Oxfordshire</div>
 
-    <!-- IMAGEN PORTADA -->
-    <img src="frontpage-bulletin-2.png" class="bulletin-img" alt="Illegal dumping site overview" />
+    <img src="frontpage-bulletin-2.png" class="bulletin-img" alt="Illegal dumping site overview">
 
-    <!-- TEXTO COMPLETO -->
     <div class="bulletin-text">
         A million litres of rain water can’t escape down Cholsey Brook as fast as it used to, into the Thames flood plain, because of 1000’s of tons of illegal industrial fly tipping that took place in the flood plain between May 2020 and May 2021.
         <br><br>
@@ -157,44 +230,45 @@ img { max-width: 100%; border-radius: 10px; }
         <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- BLOQUE FINAL -->
+    <!-- DETALLES Y LISTA -->
     <div class="bulletin-text">
         <ul>
             <li><b>The Environment Agency (EA)</b> were immediately notified and a FOI Request asked if any permission to infill the flood plain had been granted.
-                <ul>
-                    <li>No permission was granted, so the land owners and the company that supplied the waste have infilled the flood plain illegally.</li>
-                </ul>
+                <ul><li>No permission was granted — the land owners and supplier have infilled illegally.</li></ul>
             </li>
-            <li><b>The EA</b> confirmed they visited the site and were told by the owners that only drainage ditches were dredged, while neighbours reported hundreds of lorries over 6 months.
-                <ul>
-                    <li>Since then, the EA has done nothing.</li>
-                </ul>
-            </li>
+            <li><b>The EA</b> visited the site but have done nothing after reports.</li>
             <li><b>Cholsey Parish Council</b> reported this to Oxfordshire County Council who have done nothing.</li>
-            <li><b>The OCC</b> were sent a FOI request at the end of 2025 but refuse to say what action they are taking.</li>
-            <li>It appears both the land owners and the company supplying the waste (in unmarked lorries) have committed a crime.</li>
-            <li>Had this infilling been done legally, it would have incurred approx. £1/4 million in landfill tax.</li>
-            <li>This video shows the 2 adjacent properties where the Thames Flood Plain has been illegally infilled 0.7m high in one to stop flooding of the property.</li>
-        </ul>
-
-        <!-- VIDEO -->
-        <video width="100%" controls poster="trumbnail-bulletin2.png">
-            <source src="the-themes-valley-bulletin-2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <!-- CONCLUSIÓN -->
-        <div class="conclusion-title">Conclusion</div>
-        <ul class="bulletin-text">
-            <li>The appropriate staff at <b>Oxfordshire County Council</b> responsible for prosecuting such blatant criminal activity must explain to the people of Oxfordshire what they are doing.</li>
-            <li>Residents of the Thames Valley, especially <b>Cholsey</b>, may wish to e-mail <a href="mailto:commentsandcomplaints@oxfordshire.gov.uk">commentsandcomplaints@oxfordshire.gov.uk</a> to ask the same question.</li>
-            <li>The owners that infilled illegally may have problems selling their property if there is a £1/4 million tax bill or potential prosecution.</li>
-            <li>If no action is taken soon, those responsible, including the owners, the EA, and the Council, should be named.</li>
+            <li><b>The OCC</b> refuse to say what action they are taking.</li>
+            <li>The infilling would have incurred approx. £1/4 million landfill tax if done legally.</li>
         </ul>
     </div>
+
+    <!-- VIDEO -->
+    <video width="100%" controls poster="trumbnail-bulletin2.png">
+        <source src="the-themes-valley-bulletin-2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- CONCLUSIÓN -->
+    <div class="conclusion-title">Conclusion</div>
+    <div class="bulletin-text">
+        <ul>
+            <li>The appropriate staff at <b>Oxfordshire County Council</b> must explain what they are doing.</li>
+            <li>Residents may e-mail <a href="mailto:commentsandcomplaints@oxfordshire.gov.uk">commentsandcomplaints@oxfordshire.gov.uk</a>.</li>
+            <li>Owners that infilled illegally may face issues selling their property if tax bills or prosecutions arise.</li>
+            <li>If no action is taken, those responsible — owners, EA, and Council — should be named.</li>
+        </ul>
+    </div>
+
+</div>
 </div>
 
-<!-- ===== SCRIPTS ===== -->
+<!-- ===== BACK TO TOP ===== -->
+<div id="backToTopWrapper">
+    <button id="backToTop">↑</button>
+    <div class="back-to-top-text">BACK TO TOP</div>
+</div>
+
 <script>
 let currentSlide = 0;
 const slides = document.querySelectorAll('.gallery-img');
@@ -204,10 +278,15 @@ function changeSlide(direction) {
     slides[currentSlide].classList.add('active');
 }
 setInterval(() => changeSlide(1), 6000);
+
+const backToTopBtn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+    document.getElementById("backToTopWrapper").style.display = (window.scrollY > 400) ? 'flex' : 'none';
+});
+backToTopBtn.addEventListener("click", ()=>{window.scrollTo({top:0,behavior:"smooth"});});
 </script>
 
 </body>
 </html>
-
 
 
