@@ -740,33 +740,33 @@ backToTopBtn.addEventListener("click", () => {
     
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+    const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k"; // tu API key
 
-    const API_BASE = "https://api.counterapi.dev/v2/the-thame-valley-bulletins-team-2667/first-counter-2667";
-    const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k"; // <-- Pon aquí tu API Key
+    // Mapear tus contadores locales a los nombres de la API
+    const counters = {
+        "bulletin1-counter": "bulletin1-counter",
+        "bulletin2-counter": "bulletin2-counter"
+    };
 
-    async function updateCounter(counterId) {
-        const counterElem = document.getElementById(counterId);
-        if (!counterElem) return;
+    for (const [elementId, apiCounter] of Object.entries(counters)) {
+        const counterElem = document.getElementById(elementId);
+        if (!counterElem) continue;
 
-        try {
-            // Incrementa el contador
-            const res = await fetch(`${API_BASE}/up`, {
-                method: "POST",
-                headers: { "Authorization": `Bearer ${API_KEY}` }
-            });
-            const data = await res.json();
-
-            // Mostrar valor actualizado
+        fetch(`https://api.counterapi.dev/v2/the-thame-valley-bulletins-team-2667/${apiCounter}/up`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${API_KEY}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
             counterElem.textContent = `${data.value} visits`;
-        } catch (err) {
-            console.error("Error updating counter:", err);
+        })
+        .catch(err => {
+            console.error("Counter API error:", err);
             counterElem.textContent = "— visits";
-        }
+        });
     }
-
-    // Lista de todos los contadores de boletín que quieres actualizar
-    const counters = ["bulletin1-counter", "bulletin2-counter"];
-    counters.forEach(id => updateCounter(id));
 });
 </script>
 
