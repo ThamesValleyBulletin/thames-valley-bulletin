@@ -740,26 +740,37 @@ backToTopBtn.addEventListener("click", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    function loadCounter(counterId, key) {
-        const counter = document.getElementById(counterId);
-        if (!counter) return;
+    // API Base y Bearer Token
+    const API_BASE = "https://api.counterapi.dev/v2/the-thame-valley-bulletins-team-2667/first-counter-2667";
+    const API_KEY = "YOUR_API_KEY"; // <-- Pon tu API Key aquí
 
-        fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`)
-            .then(res => res.json())
-            .then(data => {
-                counter.textContent = data.value + " visits";
-            })
-            .catch(() => {
-                counter.textContent = "— visits";
+    // Función para actualizar contador en el HTML
+    async function updateCounter(counterId) {
+        const counterElem = document.getElementById(counterId);
+        if (!counterElem) return;
+
+        try {
+            // Incrementar contador
+            const resUp = await fetch(`${API_BASE}/up`, {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${API_KEY}` }
             });
+            const dataUp = await resUp.json();
+
+            // Mostrar valor actualizado
+            counterElem.textContent = `${dataUp.value} visits`;
+        } catch (err) {
+            console.error("Error updating counter:", err);
+            counterElem.textContent = "— visits";
+        }
     }
 
-    loadCounter("bulletin1-counter", "bulletin1");
-    loadCounter("bulletin2-counter", "bulletin2");
+    // Actualizar todos los contadores existentes en la página
+    const counters = ["bulletin1-counter", "bulletin2-counter"];
+    counters.forEach(id => updateCounter(id));
 
 });
 </script>
-
 
 </body>
 </html>
