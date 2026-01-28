@@ -723,13 +723,12 @@ const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
-        backToTopBtn.parentElement.style.display = "flex"; // mostrar el wrapper
+        backToTopBtn.parentElement.style.display = "flex";
     } else {
-        backToTopBtn.parentElement.style.display = "none"; // ocultar el wrapper
+        backToTopBtn.parentElement.style.display = "none";
     }
 });
 
-<script>
 backToTopBtn.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
@@ -737,6 +736,7 @@ backToTopBtn.addEventListener("click", () => {
     });
 });
 </script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
