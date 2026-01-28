@@ -736,6 +736,7 @@ backToTopBtn.addEventListener("click", () => {
     });
 });
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -743,7 +744,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const counter = document.getElementById(counterId);
         if (!counter) return;
 
-        // "hit" incrementa y devuelve el valor actualizado
         fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`)
             .then(res => res.json())
             .then(data => {
@@ -754,13 +754,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // Contadores para los botones
     loadCounter("bulletin1-counter", "bulletin1");
     loadCounter("bulletin2-counter", "bulletin2");
 
 });
 </script>
-
 
 
 </body>
