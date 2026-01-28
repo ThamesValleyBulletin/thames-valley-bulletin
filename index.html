@@ -739,28 +739,33 @@ backToTopBtn.addEventListener("click", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    function setupCounter(buttonId, counterId, key) {
-        const button = document.getElementById(buttonId);
+    function loadCounter(counterId, key) {
         const counter = document.getElementById(counterId);
+        if (!counter) return;
 
-        if (!button || !counter) return;
-
-        // 🔹 INICIALIZA + LEE CONTADOR (esto CREA el contador si no existe)
-        fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}?amount=0`)
+        fetch(`https://api.countapi.xyz/get/thamesvalleybulletin/${key}`)
             .then(res => res.json())
             .then(data => {
-                counter.textContent = data.value + " visits";
+                counter.textContent = (data.value || 0) + " visits";
+            })
+            .catch(() => {
+                counter.textContent = "— visits";
             });
-
-        // 🔹 SUMAR AL HACER CLICK (SIN ROMPER EL LINK)
-        button.addEventListener("click", () => {
-            fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`);
-        });
     }
 
-    setupCounter("bulletin1-btn", "bulletin1-counter", "bulletin1");
-    setupCounter("bulletin2-btn", "bulletin2-counter", "bulletin2");
+    loadCounter("bulletin1-counter", "bulletin1");
+    loadCounter("bulletin2-counter", "bulletin2");
 
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("https://api.countapi.xyz/hit/thamesvalleybulletin/bulletin1");
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("https://api.countapi.xyz/hit/thamesvalleybulletin/bulletin2");
 });
 </script>
 
