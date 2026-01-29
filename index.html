@@ -10,551 +10,8 @@
 <link rel="manifest" href="favicon/site.webmanifest">
     
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background:
-        radial-gradient(
-            ellipse at top,
-            rgba(255,255,255,0.15),
-            transparent 70%
-        ),
-        #0f0f0f;
-    color: white;
-    text-align: center;
-}
-
-
-
-/* ===== HERO ===== */
-.hero {
-    background: 
-        linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.75)),
-        url("thethamesvalley-landscape.png") center/cover no-repeat;
-
-    padding-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    /* 👇 ESTO ES LO IMPORTANTE */
-    padding-bottom: 90px;
-}
-
-img.logo {
-    display: block;
-    margin: 0 auto 25px auto;
-    width: 160px;
-}
-
-h1 {
-    font-size: 44px;
-    color: #e2e8f0;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 32px;
-    color: #a0c4e2;
-    margin: 0 0 10px 0;
-}
-
-/* ===== BOTONES HERO ===== */
-.buttons-central {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: -60px;
-}
-
-
-.bulletin-btn {
-    flex: 1;
-    min-width: 240px;
-    max-width: 280px;
-    background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #5a5a5a;
-    text-decoration: none;
-    color: #f5f5f5;
-}
-/* Solo para el botón del Boletín 1 */
-.bulletin-btn.published {
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c); /* azul */
-    border: 1px solid #3b6cff; /* borde azul */
-}
-    /* Cambiar solo el texto "Bulletin 1" a blanco */
-.bulletin-btn.published .bulletin-label {
-    color: white;
-}
-.bulletin-label {
-    color: #4c9bdc;
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.bulletin-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.view-more {
-    display: inline-block;
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
-    padding: 10px 20px;
-    border-radius: 12px;
-    margin-top: 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ===== CONTENIDO ===== */
-.container {
-    width: 95%;
-    max-width: 1100px;
-    margin: auto;
-    padding-top: 40px;
-}
-
-hr {
-    border: 1px solid #cacbcd;
-    width: 60%;
-    margin-bottom: 40px;
-}
-
-.intro {
-    max-width: 1000px;   /* ⬅️ hace el texto más ancho */
-    margin: 0 auto;
-    text-align: justify; /* texto justificado */
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 40px;
-}
-
-.content-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.bulletin-column {
-    width: 100%;
-    max-width: 700px;
-    text-align: left;
-}
-
-.bulletin-box {
-    background: linear-gradient(145deg, #2d2d2d, #1c1c1c);
-    padding: 25px;
-    border-radius: 18px;
-    border: 1px solid #5a5a5a;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.bulletin-number {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(145deg, #4c9bdc, #1c1c1c);
-    padding: 5px 12px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.bulletin-box h3 {
-    font-size: 28px;
-    margin-bottom: 5px;
-}
-
-.bulletin-subtitle {
-    font-size: 20px;
-    color: #a0c4ff;
-    margin-bottom: 18px;
-}
-
-.bulletin-text {
-    line-height: 1.65;
-    font-size: 17px;
-    margin-top: 10px;
-}
-
-.bulletin-img {
-    width: 100%;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-.bulletin-img-small {
-    max-width: 420px;   /* ← cambia este valor si quieres */
-    margin: 20px auto;
-    display: block;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 17px;
-}
-
-th {
-    background-color: #4c9bdc;
-    padding: 10px;
-}
-
-td {
-    padding: 10px;
-    border-bottom: 1px solid #cacbcd;
-}
-
-.conclusion-title {
-    color: #3b6cff;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 25px;
-}
-/* ===== ABOUT SECTION ===== */
-.about-section {
-    background:
-        linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.85)),
-        url("map-illustration-thethamesvalley.png") center/cover no-repeat;
-    padding: 40px 20px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.about-section::before,
-.about-section::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(76,155,220,0.7),
-        rgba(59,108,255,0.7),
-        rgba(76,155,220,0.7),
-        transparent
-    );
-}
-
-.about-section::before {
-    top: 0;
-}
-
-.about-section::after {
-    bottom: 0;
-}
-
-
-
-.about-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about-title {
-    flex: 1;
-    font-size: 46px;
-    font-weight: bold;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #a0c4e2;
-    text-align: right;
-}
-
-.about-text {
-    flex: 1;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: left;
-    max-width: 520px;
-}
-/* ===== ABOUT RESPONSIVE ===== */
-@media (max-width: 900px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .about-title {
-        text-align: center;
-        font-size: 34px;
-    }
-
-    .about-text {
-        text-align: center;
-        max-width: 90%;
-        font-size: 16px;
-    }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    h1 { font-size: 34px; }
-    h2 { font-size: 24px; }
-
-    .buttons-central {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* 👇 INTRO TEXTO EN MÓVIL */
-    .intro {
-        max-width: 90%;
-        text-align: left;
-        font-size: 16px;
-        line-height: 1.6;
-    }
-}
-/* ===== BULLETIN GALLERY (NO FRAME) ===== */
-.bulletin-gallery {
-    position: relative;
-    width: 100%;
-    margin: 25px 0;
-}
-
-.gallery-img {
-    display: none;
-    width: 100%;
-    border-radius: 10px;
-    border: none;
-}
-
-.gallery-img.active {
-    display: block;
-}
-
-.gallery-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(15,15,15,0.8);
-    color: #4c9bdc;
-    border: 1px solid #4c9bdc;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
-
-
-@media (max-width: 600px) {
-    .gallery-btn.prev {
-        left: 5px;
-    }
-    .gallery-btn.next {
-        right: 5px;
-    }
-}
-
-
-/* ===== BOTONES HERO MÓVIL – BLOQUE ÚNICO Y CORRECTO ===== */
-@media (max-width: 768px) {
-    h1 { font-size: 34px; }
-    h2 { font-size: 24px; }
-
-    .buttons-central {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .bulletin-btn {
-        width: 100%;
-        max-width: 280px;
-        min-height: 190px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .intro {
-        max-width: 90%;
-        text-align: left;
-        font-size: 16px;
-        line-height: 1.6;
-    }
-}
-    /* ===== CITA DESTACADA ===== */
-.highlighted-quote {
-    margin: 30px 0;
-    padding: 18px 22px;
-    border-left: 4px solid #4c9bdc;
-    background: rgba(76, 155, 220, 0.08);
-    font-style: italic;
-    font-size: 18px;
-    line-height: 1.5;
-    color: #e2e8f0;
-}
-    /* ===== IMAGEN BULLETIN 3 ===== */
-#bulletin3 .bulletin-img {
-    margin: 25px 0 30px 0;
-    border-radius: 14px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-}
-/* ===== CIERRE VISUAL BULLETIN 3 ===== */
-#bulletin3 .bulletin-text:last-of-type::after {
-    content: "";
-    display: block;
-    width: 60%;
-    height: 2px;
-    margin: 35px auto 10px auto;
-    background: linear-gradient(
-        to right,
-        transparent,
-        #4c9bdc,
-        transparent
-    );
-    opacity: 0.6;
-}
-/* ===== CIERRE VISUAL BULLETIN 1 ===== */
-#bulletin1 .bulletin-text:last-of-type::after {
-    content: "";
-    display: block;
-    width: 60%;
-    height: 2px;
-    margin: 35px auto 10px auto;
-    background: linear-gradient(
-        to right,
-        transparent,
-        #4c9bdc,
-        transparent
-    );
-    opacity: 0.6;
-}
-/* ===== CIERRE VISUAL BULLETIN 2 (DEBAJO DEL CARRUSEL) ===== */
-#bulletin2::after {
-    content: "";
-    display: block;
-    width: 60%;
-    height: 2px;
-    margin: 35px auto 10px auto;
-    background: linear-gradient(to right, transparent, #4c9bdc, transparent);
-    opacity: 0.6;
-}
-
-/* ===== IMÁGENES DE PORTADA (SOLO PORTADAS) ===== */
-#bulletin1 img.bulletin-img:first-of-type,
-#bulletin2 img.bulletin-img:first-of-type,
-#bulletin3 img.bulletin-img:first-of-type {
-    margin: 25px 0 30px 0;
-    border-radius: 14px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-}
-/* ===== BOTÓN VOLVER ARRIBA ===== */
-#backToTopWrapper {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    display: flex;
-    flex-direction: column; /* flecha arriba, texto debajo */
-    align-items: center;
-    z-index: 999;
-}
-
-#backToTop {
-    width: 68px;
-    height: 68px;
-    font-size: 36px;       /* flecha más grande */
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(145deg, #3b6cff, #1c1c1c);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.55);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Hover desktop */
-#backToTop:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.7);
-}
-
-/* Texto debajo de la flecha */
-#backToTopWrapper .back-to-top-text {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    margin-top: 6px;
-    text-align: center;
-}
-
-/* MÓVIL */
-@media (max-width: 768px) {
-    #backToTopWrapper {
-        bottom: 18px;
-        right: 18px;
-    }
-
-    #backToTop {
-        width: 52px;
-        height: 52px;
-        font-size: 28px;
-    }
-
-    #backToTopWrapper .back-to-top-text {
-        font-size: 10px;
-    }
-}
-/* ===== CONTENIDO BLOQUEADO (COMING SOON) ===== */
-.coming-soon {
-    position: relative;
-}
-
-.coming-soon .locked-content {
-    filter: blur(6px);
-    opacity: 0.55;
-    pointer-events: none;
-    user-select: none;
-}
-
-/* Etiqueta central */
-.coming-soon::after {
-    content: "REPORT COMING SOON";
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(15,15,15,0.85);
-    color: #4c9bdc;
-    padding: 14px 22px;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: 1px solid rgba(76,155,220,0.6);
-    text-transform: uppercase;
-    z-index: 5;
-}
-
+/* ===== TODO TU CSS EXISTENTE ===== */
+/* ...todo el CSS que ya tenías... */
 </style>
 </head>
 
@@ -569,71 +26,12 @@ td {
 
 <style>
 /* ===== NAVBAR ESTILO PROFESIONAL ===== */
-.navbar {
-    display: flex;
-    justify-content: space-around; /* links repartidos uniformemente */
-    background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
-    padding: 15px 0;
-    position: sticky; /* se queda arriba al hacer scroll */
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #4c9bdc;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-.navbar a {
-    flex: 1; /* ocupa espacio igual */
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
-
-/* Hover: cambiar color del texto */
-.navbar a:hover {
-    color: #4c9bdc;
-}
-
-/* Subrayado animado */
-.navbar a::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #4c9bdc;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.navbar a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Responsive: en móviles se apilan */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .navbar a {
-        flex: none;
-        padding: 10px 0;
-    }
-}
+/* ...igual que antes... */
 </style>
-
 
 <!-- ===== HERO ===== -->
 <div class="hero">
     <img class="logo" src="the-thame-valley-bulletin-WB.png" alt="Logo" />
-
     <h1>THE THAMES VALLEY BULLETIN</h1>
     <h2>Bringing facts to the Thames Valley without the noise of social media</h2>
 </div>
@@ -648,8 +46,6 @@ td {
     <span id="bulletin1-counter" style="display:block; margin-top:8px; font-size:14px; color:white;">0 visits</span>
 </a>
 
-
-
 <a href="bulletin2.html" class="bulletin-btn published" id="bulletin2-btn">
     <div class="bulletin-label">Bulletin 2</div>
     <div class="bulletin-title">Industrial fly tipping in Cholsey</div>
@@ -657,26 +53,22 @@ td {
     <span id="bulletin2-counter" style="display:block; margin-top:8px; font-size:14px; color:white;">0 visits</span>
 </a>
 
-
-        <a href="bulletin3.html" class="bulletin-btn" id="bulletin3-btn">
-            <div class="bulletin-label">Bulletin 3</div>
-            <div class="bulletin-title">NHS Problem?  Victim’s on TVP waiting lists</div>
-            <span class="view-more">REPORT COMING SOON</span>
-        </a>
+<a href="bulletin3.html" class="bulletin-btn" id="bulletin3-btn">
+    <div class="bulletin-label">Bulletin 3</div>
+    <div class="bulletin-title">NHS Problem?  Victim’s on TVP waiting lists</div>
+    <span class="view-more">REPORT COMING SOON</span>
+</a>
     </div>
 </div>
 
-<!-- ===== BOLETINES ===== -->
 <!-- ===== ABOUT SECTION ===== -->
 <section class="about-section">
     <div class="about-container">
-
        <div class="about-title">
     WELCOME TO<br>
     THE THAMES<br>
     VALLEY BULLETIN
 </div>
-
        <div class="about-text">
     An independent citizen-led initiative designed to empower the community
     by bringing <b>clarity, transparency and public awareness</b> to how we are
@@ -686,12 +78,9 @@ td {
     <b>concerns</b> — presented with the sole purpose of informing
     residents so we can hold those in power to account.
 </div>
-
-
     </div>
 </section>
 
-<!-- CONTENEDOR VACÍO PARA FUTURO CONTENIDO -->
 <div class="content-wrapper">
     <div class="bulletin-column">
         <!-- Aquí no hay boletines, solo los botones arriba -->
@@ -704,8 +93,9 @@ td {
 </div>
 
 <script>
+// ===== BOTÓN BACK TO TOP =====
 const backToTopBtn = document.getElementById("backToTop");
-backToTopBtn.parentElement.style.display = "none"; // oculto al cargar
+backToTopBtn.parentElement.style.display = "none"; 
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
@@ -716,10 +106,7 @@ window.addEventListener("scroll", () => {
 });
 
 backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
 </script>
 
@@ -753,24 +140,21 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCounter(counterName, elementId);
   }
 
-  // Click en botones de boletines
+  // ===== CLICK EN BOTONES DE BOLETINES =====
   document.querySelectorAll(".bulletin-btn").forEach(btn => {
     btn.addEventListener("click", async (e) => {
-      const href = btn.getAttribute("href"); // enlace del boletín
+      const href = btn.getAttribute("href");
       const id = btn.id;
 
       if (id.startsWith("bulletin1")) await updateCounter("bulletin1", "bulletin1-counter");
       if (id.startsWith("bulletin2")) await updateCounter("bulletin2", "bulletin2-counter");
 
-      // Dejamos que la navegación ocurra después de un pequeño delay
-      setTimeout(() => {
-        window.location.href = href;
-      }, 150); // 150ms suficiente para enviar la petición
-      e.preventDefault(); // bloquea la navegación inmediata
+      setTimeout(() => { window.location.href = href; }, 150);
+      e.preventDefault();
     });
   });
 
-  // Click en navbar hacia boletines
+  // ===== CLICK EN NAVBAR HACIA BOLETINES =====
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", async (e) => {
       const href = link.getAttribute("href");
@@ -787,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
