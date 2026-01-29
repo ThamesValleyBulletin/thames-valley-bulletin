@@ -784,6 +784,60 @@ document.querySelectorAll(".navbar a").forEach(link => {
 });
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // IDs de tus contadores y "llaves" para el servicio externo
+  const counters = {
+    "bulletin1-counter": "bulletin1-thamesvalley",
+    "bulletin2-counter": "bulletin2-thamesvalley"
+  };
+
+  // Servicio externo gratuito para contador simple
+  // Usamos CounterAPI: https://counterapi.com/
+  async function updateCounter(counterName, elementId) {
+    const el = document.getElementById(elementId);
+    try {
+      const res = await fetch(`https://api.countapi.xyz/hit/${counterName}/visits`);
+      const data = await res.json();
+      el.textContent = `${data.value} visits`;
+    } catch (err) {
+      console.error("Counter error:", err);
+      el.textContent = "0 visits";
+    }
+  }
+
+  // Inicializa contadores al cargar
+  for (const [elementId, counterName] of Object.entries(counters)) {
+    updateCounter(counterName, elementId);
+  }
+
+  // Click en botones de boletines: incrementa antes de ir
+  document.querySelectorAll(".bulletin-btn").forEach(btn => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const href = btn.href;
+
+      if (btn.id.startsWith("bulletin1")) await updateCounter("bulletin1-thamesvalley", "bulletin1-counter");
+      if (btn.id.startsWith("bulletin2")) await updateCounter("bulletin2-thamesvalley", "bulletin2-counter");
+
+      setTimeout(() => { window.location.href = href; }, 150);
+    });
+  });
+
+  // Click en navbar: mismo comportamiento
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const href = link.href;
+
+      if (href.includes("bulletin1.html")) await updateCounter("bulletin1-thamesvalley", "bulletin1-counter");
+      if (href.includes("bulletin2.html")) await updateCounter("bulletin2-thamesvalley", "bulletin2-counter");
+
+      setTimeout(() => { window.location.href = href; }, 150);
+    });
+  });
+});
+</script>
 
 </body>
 </html>
