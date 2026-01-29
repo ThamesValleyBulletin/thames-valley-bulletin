@@ -728,13 +728,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k";
   const NAMESPACE = "thames-valley-bulletin";
 
-  // Contadores visibles en la home
   const counters = {
     "bulletin1-counter": "bulletin1",
     "bulletin2-counter": "bulletin2"
   };
 
-  // Función para actualizar un contador
   async function updateCounter(counterName, elementId) {
     try {
       const res = await fetch(`https://api.counterapi.dev/v2/${NAMESPACE}/${counterName}?increase=1`, {
@@ -742,7 +740,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       const data = await res.json();
       const el = document.getElementById(elementId);
-      if (el) el.textContent = `${data.value ?? 0} visits`;
+      if (el && typeof data.value === "number") {
+        el.textContent = `${data.value} visits`;
+      }
     } catch (err) {
       console.error("Counter error:", err);
       const el = document.getElementById(elementId);
@@ -750,27 +750,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Inicializar contadores al cargar la home
-  for (const [elementId, counterName] of Object.entries(counters)) {
-    updateCounter(counterName, elementId);
-  }
+  // Inicializar contadores al cargar la página
+  Object.entries(counters).forEach(([elId, counterName]) => updateCounter(counterName, elId));
 
-  // Añadir click a los botones de "VIEW MORE"
+  // Manejar clics en botones de boletines
   document.querySelectorAll(".bulletin-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      const id = btn.id; // ej: bulletin1-btn
-      if (id.startsWith("bulletin1")) updateCounter("bulletin1", "bulletin1-counter");
-      if (id.startsWith("bulletin2")) updateCounter("bulletin2", "bulletin2-counter");
-      // El click seguirá llevando al usuario al boletín
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault(); // Evita navegación inmediata
+      let counterName = null;
+      let counterId = null;
+
+      if (btn.id.startsWith("bulletin1")) { counterName = "bulletin1"; counterId = "bulletin1-counter"; }
+      if (btn.id.startsWith("bulletin2")) { counterName = "bulletin2"; counterId = "bulletin2-counter"; }
+
+      if (counterName && counterId) {
+        await updateCounter(counterName, counterId); // Espera a que se actualice
+      }
+
+      // Ahora navegamos a la página correspondiente
+      window.location.href = btn.getAttribute("href");
     });
   });
 
-  // Añadir click a los enlaces de la navbar hacia boletines
+  // Manejar clics en la navbar solo hacia boletines
   document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", (e) => {
+    link.addEventListener("click", async (e) => {
       const href = link.getAttribute("href");
-      if (href === "bulletin1.html") updateCounter("bulletin1", "bulletin1-counter");
-      if (href === "bulletin2.html") updateCounter("bulletin2", "bulletin2-counter");
+      let counterName = null;
+      let counterId = null;
+
+      if (href === "bulletin1.html") { counterName = "bulletin1"; counterId = "bulletin1-counter"; }
+      if (href === "bulletin2.html") { counterName = "bulletin2"; counterId = "bulletin2-counter"; }
+
+      if (counterName && counterId) {
+        e.preventDefault(); // Evita navegación inmediata
+        await updateCounter(counterName, counterId);
+        window.location.href = href; // luego navegamos
+      }
     });
   });
 });
