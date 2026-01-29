@@ -728,29 +728,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k";
   const NAMESPACE = "thames-valley-bulletin";
 
+  // Contadores visibles en la home
   const counters = {
     "bulletin1-counter": "bulletin1",
     "bulletin2-counter": "bulletin2"
   };
 
-  for (const [elementId, counterName] of Object.entries(counters)) {
-    const el = document.getElementById(elementId);
-    if (!el) continue;
-
-    fetch(`https://api.counterapi.dev/v2/${NAMESPACE}/${counterName}`, {
-      headers: {
-        "Authorization": `Bearer ${API_KEY}`
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
-      el.textContent = `${data.value ?? 0} visits`;
-    })
-    .catch(err => {
+  // Función para actualizar un contador
+  async function updateCounter(counterName, elementId) {
+    try {
+      const res = await fetch(`https://api.counterapi.dev/v2/${NAMESPACE}/${counterName}?increase=1`, {
+        headers: { "Authorization": `Bearer ${API_KEY}` }
+      });
+      const data = await res.json();
+      const el = document.getElementById(elementId);
+      if (el) el.textContent = `${data.value ?? 0} visits`;
+    } catch (err) {
       console.error("Counter error:", err);
-      el.textContent = "— visits";
-    });
+      const el = document.getElementById(elementId);
+      if (el) el.textContent = "0 visits";
+    }
   }
+
+  // Inicializar contadores al cargar la home
+  for (const [elementId, counterName] of Object.entries(counters)) {
+    updateCounter(counterName, elementId);
+  }
+
+  // Añadir click a los botones de "VIEW MORE"
+  document.querySelectorAll(".bulletin-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const id = btn.id; // ej: bulletin1-btn
+      if (id.startsWith("bulletin1")) updateCounter("bulletin1", "bulletin1-counter");
+      if (id.startsWith("bulletin2")) updateCounter("bulletin2", "bulletin2-counter");
+      // El click seguirá llevando al usuario al boletín
+    });
+  });
+
+  // Añadir click a los enlaces de la navbar hacia boletines
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href === "bulletin1.html") updateCounter("bulletin1", "bulletin1-counter");
+      if (href === "bulletin2.html") updateCounter("bulletin2", "bulletin2-counter");
+    });
+  });
 });
 </script>
 
