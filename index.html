@@ -713,13 +713,13 @@ setInterval(() => {
 }, 6000);
 </script>
 <div id="backToTopWrapper">
-    <button id="backToTop">
-        ↑
-    </button>
+    <button id="backToTop">↑</button>
     <div class="back-to-top-text">BACK TO TOP</div>
 </div>
+
 <script>
 const backToTopBtn = document.getElementById("backToTop");
+backToTopBtn.parentElement.style.display = "none"; // oculto al cargar
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
@@ -737,38 +737,41 @@ backToTopBtn.addEventListener("click", () => {
 });
 </script>
 
-    
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k"; // tu API key
+  const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k";
+  const NAMESPACE = "thames-valley-bulletin";
 
-    // Mapear tus contadores locales a los nombres de la API
-    const counters = {
-        "bulletin1-counter": "bulletin1-counter",
-        "bulletin2-counter": "bulletin2-counter"
-    };
+  const counters = {
+    "bulletin1-counter": "bulletin1",
+    "bulletin2-counter": "bulletin2"
+  };
 
-    for (const [elementId, apiCounter] of Object.entries(counters)) {
-        const counterElem = document.getElementById(elementId);
-        if (!counterElem) continue;
+  for (const [elementId, counterName] of Object.entries(counters)) {
+    const el = document.getElementById(elementId);
+    if (!el) continue;
 
-        fetch(`https://api.counterapi.dev/v2/the-thame-valley-bulletins-team-2667/${apiCounter}/up`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${API_KEY}`
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            counterElem.textContent = `${data.value} visits`;
-        })
-        .catch(err => {
-            console.error("Counter API error:", err);
-            counterElem.textContent = "— visits";
-        });
-    }
+    fetch(`https://api.counterapi.dev/v2/${NAMESPACE}/${counterName}`, {
+      headers: {
+        "Authorization": `Bearer ${API_KEY}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      el.textContent = `${data.value ?? 0} visits`;
+    })
+    .catch(err => {
+      console.error("Counter error:", err);
+      el.textContent = "— visits";
+    });
+  }
 });
 </script>
+
+</body>
+</html>
+
+
 
 
 </body>
