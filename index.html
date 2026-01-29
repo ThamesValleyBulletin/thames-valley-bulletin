@@ -740,9 +740,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       const data = await res.json();
       const el = document.getElementById(elementId);
-      if (el && typeof data.value === "number") {
-        el.textContent = `${data.value} visits`;
-      }
+      if (el) el.textContent = `${data.value ?? 0} visits`;
     } catch (err) {
       console.error("Counter error:", err);
       const el = document.getElementById(elementId);
@@ -750,43 +748,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Inicializar contadores al cargar la página
-  Object.entries(counters).forEach(([elId, counterName]) => updateCounter(counterName, elId));
+  // Inicializar contadores al cargar la home
+  for (const [elementId, counterName] of Object.entries(counters)) {
+    updateCounter(counterName, elementId);
+  }
 
-  // Manejar clics en botones de boletines
+  // Click en botones de boletines
   document.querySelectorAll(".bulletin-btn").forEach(btn => {
     btn.addEventListener("click", async (e) => {
-      e.preventDefault(); // Evita navegación inmediata
-      let counterName = null;
-      let counterId = null;
+      const href = btn.getAttribute("href"); // enlace del boletín
+      const id = btn.id;
 
-      if (btn.id.startsWith("bulletin1")) { counterName = "bulletin1"; counterId = "bulletin1-counter"; }
-      if (btn.id.startsWith("bulletin2")) { counterName = "bulletin2"; counterId = "bulletin2-counter"; }
+      if (id.startsWith("bulletin1")) await updateCounter("bulletin1", "bulletin1-counter");
+      if (id.startsWith("bulletin2")) await updateCounter("bulletin2", "bulletin2-counter");
 
-      if (counterName && counterId) {
-        await updateCounter(counterName, counterId); // Espera a que se actualice
-      }
-
-      // Ahora navegamos a la página correspondiente
-      window.location.href = btn.getAttribute("href");
+      // Dejamos que la navegación ocurra después de un pequeño delay
+      setTimeout(() => {
+        window.location.href = href;
+      }, 150); // 150ms suficiente para enviar la petición
+      e.preventDefault(); // bloquea la navegación inmediata
     });
   });
 
-  // Manejar clics en la navbar solo hacia boletines
+  // Click en navbar hacia boletines
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", async (e) => {
       const href = link.getAttribute("href");
-      let counterName = null;
-      let counterId = null;
 
-      if (href === "bulletin1.html") { counterName = "bulletin1"; counterId = "bulletin1-counter"; }
-      if (href === "bulletin2.html") { counterName = "bulletin2"; counterId = "bulletin2-counter"; }
+      if (href === "bulletin1.html") await updateCounter("bulletin1", "bulletin1-counter");
+      if (href === "bulletin2.html") await updateCounter("bulletin2", "bulletin2-counter");
 
-      if (counterName && counterId) {
-        e.preventDefault(); // Evita navegación inmediata
-        await updateCounter(counterName, counterId);
-        window.location.href = href; // luego navegamos
-      }
+      setTimeout(() => { window.location.href = href; }, 150);
+      e.preventDefault();
     });
   });
 });
