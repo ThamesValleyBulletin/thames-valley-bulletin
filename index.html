@@ -754,35 +754,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Click en botones de boletines
-  document.querySelectorAll(".bulletin-btn").forEach(btn => {
-    btn.addEventListener("click", async (e) => {
-      const href = btn.getAttribute("href"); // enlace del boletín
-      const id = btn.id;
+  // Click en botones de boletines
+document.querySelectorAll(".bulletin-btn").forEach(btn => {
+  btn.addEventListener("click", async (e) => {
+    e.preventDefault(); // bloquea la navegación inmediata
+    const href = btn.href; // enlace del boletín
 
-      if (id.startsWith("bulletin1")) await updateCounter("bulletin1", "bulletin1-counter");
-      if (id.startsWith("bulletin2")) await updateCounter("bulletin2", "bulletin2-counter");
+    // Actualiza el contador antes de navegar
+    if (btn.id.startsWith("bulletin1")) await updateCounter("bulletin1", "bulletin1-counter");
+    if (btn.id.startsWith("bulletin2")) await updateCounter("bulletin2", "bulletin2-counter");
 
-      // Dejamos que la navegación ocurra después de un pequeño delay
-      setTimeout(() => {
-        window.location.href = href;
-      }, 150); // 150ms suficiente para enviar la petición
-      e.preventDefault(); // bloquea la navegación inmediata
-    });
-  });
-
-  // Click en navbar hacia boletines
-  document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", async (e) => {
-      const href = link.getAttribute("href");
-
-      if (href === "bulletin1.html") await updateCounter("bulletin1", "bulletin1-counter");
-      if (href === "bulletin2.html") await updateCounter("bulletin2", "bulletin2-counter");
-
-      setTimeout(() => { window.location.href = href; }, 150);
-      e.preventDefault();
-    });
+    // Ahora sí navega a la página
+    window.location.href = href;
   });
 });
+
+  // Click en navbar hacia boletines
+  // Click en navbar hacia boletines
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const href = link.href;
+
+    if (href.includes("bulletin1.html")) await updateCounter("bulletin1", "bulletin1-counter");
+    if (href.includes("bulletin2.html")) await updateCounter("bulletin2", "bulletin2-counter");
+
+    window.location.href = href;
+  });
+});
+
 </script>
 
 </body>
