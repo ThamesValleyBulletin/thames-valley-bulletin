@@ -725,119 +725,59 @@ backToTopBtn.addEventListener("click", () => {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const API_KEY = "ut_FnlkeB0Z11rSsbpyOqJOFY9xLB9UuixUzFpKqU7k";
-  const NAMESPACE = "thames-valley-bulletin";
-
+  // IDs de los contadores
   const counters = {
     "bulletin1-counter": "bulletin1",
     "bulletin2-counter": "bulletin2"
   };
 
-  async function updateCounter(counterName, elementId) {
+  // Función para actualizar el contador desde CountAPI
+  async function updateCounter(counterId, key) {
     try {
-      const res = await fetch(`https://api.counterapi.dev/v2/${NAMESPACE}/${counterName}?increase=1`, {
-        headers: { "Authorization": `Bearer ${API_KEY}` }
-      });
+      // CountAPI incrementa y devuelve el valor
+      const res = await fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`);
       const data = await res.json();
-      const el = document.getElementById(elementId);
-      if (el) el.textContent = `${data.value ?? 0} visits`;
+      document.getElementById(counterId).textContent = `${data.value} visits`;
     } catch (err) {
       console.error("Counter error:", err);
-      const el = document.getElementById(elementId);
-      if (el) el.textContent = "0 visits";
+      document.getElementById(counterId).textContent = "0 visits";
     }
   }
 
-  // Inicializar contadores al cargar la home
-  for (const [elementId, counterName] of Object.entries(counters)) {
-    updateCounter(counterName, elementId);
+  // Inicializar contadores al cargar la página
+  for (const [counterId, key] of Object.entries(counters)) {
+    updateCounter(counterId, key);
   }
 
   // Click en botones de boletines
-  // Click en botones de boletines
-document.querySelectorAll(".bulletin-btn").forEach(btn => {
-  btn.addEventListener("click", async (e) => {
-    e.preventDefault(); // bloquea la navegación inmediata
-    const href = btn.href; // enlace del boletín
-
-    // Actualiza el contador antes de navegar
-    if (btn.id.startsWith("bulletin1")) await updateCounter("bulletin1", "bulletin1-counter");
-    if (btn.id.startsWith("bulletin2")) await updateCounter("bulletin2", "bulletin2-counter");
-
-    // Ahora sí navega a la página
-    window.location.href = href;
-  });
-});
-
-  // Click en navbar hacia boletines
-  // Click en navbar hacia boletines
-document.querySelectorAll(".navbar a").forEach(link => {
-  link.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const href = link.href;
-
-    if (href.includes("bulletin1.html")) await updateCounter("bulletin1", "bulletin1-counter");
-    if (href.includes("bulletin2.html")) await updateCounter("bulletin2", "bulletin2-counter");
-
-    window.location.href = href;
-  });
-});
-
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // IDs de tus contadores y "llaves" para el servicio externo
-  const counters = {
-    "bulletin1-counter": "bulletin1-thamesvalley",
-    "bulletin2-counter": "bulletin2-thamesvalley"
-  };
-
-  // Servicio externo gratuito para contador simple
-  // Usamos CounterAPI: https://counterapi.com/
-  async function updateCounter(counterName, elementId) {
-    const el = document.getElementById(elementId);
-    try {
-      const res = await fetch(`https://api.countapi.xyz/hit/${counterName}/visits`);
-      const data = await res.json();
-      el.textContent = `${data.value} visits`;
-    } catch (err) {
-      console.error("Counter error:", err);
-      el.textContent = "0 visits";
-    }
-  }
-
-  // Inicializa contadores al cargar
-  for (const [elementId, counterName] of Object.entries(counters)) {
-    updateCounter(counterName, elementId);
-  }
-
-  // Click en botones de boletines: incrementa antes de ir
   document.querySelectorAll(".bulletin-btn").forEach(btn => {
     btn.addEventListener("click", async (e) => {
       e.preventDefault();
       const href = btn.href;
 
-      if (btn.id.startsWith("bulletin1")) await updateCounter("bulletin1-thamesvalley", "bulletin1-counter");
-      if (btn.id.startsWith("bulletin2")) await updateCounter("bulletin2-thamesvalley", "bulletin2-counter");
+      if (btn.id.startsWith("bulletin1")) await updateCounter("bulletin1-counter", "bulletin1");
+      if (btn.id.startsWith("bulletin2")) await updateCounter("bulletin2-counter", "bulletin2");
 
+      // Navegar tras actualizar
       setTimeout(() => { window.location.href = href; }, 150);
     });
   });
 
-  // Click en navbar: mismo comportamiento
+  // Click en navbar hacia boletines
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", async (e) => {
       e.preventDefault();
       const href = link.href;
 
-      if (href.includes("bulletin1.html")) await updateCounter("bulletin1-thamesvalley", "bulletin1-counter");
-      if (href.includes("bulletin2.html")) await updateCounter("bulletin2-thamesvalley", "bulletin2-counter");
+      if (href.includes("bulletin1.html")) await updateCounter("bulletin1-counter", "bulletin1");
+      if (href.includes("bulletin2.html")) await updateCounter("bulletin2-counter", "bulletin2");
 
       setTimeout(() => { window.location.href = href; }, 150);
     });
   });
 });
 </script>
+
 
 </body>
 </html>
