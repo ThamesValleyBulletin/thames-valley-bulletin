@@ -645,17 +645,14 @@ td {
     <div class="bulletin-label">Bulletin 1</div>
     <div class="bulletin-title">We paid Crime Commissioner’s £180k of membership fees?</div>
     <span class="view-more">VIEW MORE</span>
-    <span id="bulletin1-counter" style="display:block; margin-top:8px; font-size:14px; color:white;">0 visits</span>
-</a>
-
+  
 
 
 <a href="bulletin2.html" class="bulletin-btn published" id="bulletin2-btn">
     <div class="bulletin-label">Bulletin 2</div>
     <div class="bulletin-title">Industrial fly tipping in Cholsey</div>
     <span class="view-more">VIEW MORE</span>
-    <span id="bulletin2-counter" style="display:block; margin-top:8px; font-size:14px; color:white;">0 visits</span>
-</a>
+   
 
 
         <a href="bulletin3.html" class="bulletin-btn" id="bulletin3-btn">
@@ -720,61 +717,6 @@ backToTopBtn.addEventListener("click", () => {
         top: 0,
         behavior: "smooth"
     });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // IDs de los contadores
-  const counters = {
-    "bulletin1-counter": "bulletin1",
-    "bulletin2-counter": "bulletin2"
-  };
-
-  // Función para actualizar el contador desde CountAPI
-  async function updateCounter(counterId, key) {
-    try {
-      // CountAPI incrementa y devuelve el valor
-      const res = await fetch(`https://api.countapi.xyz/hit/thamesvalleybulletin/${key}`);
-      const data = await res.json();
-      document.getElementById(counterId).textContent = `${data.value} visits`;
-    } catch (err) {
-      console.error("Counter error:", err);
-      document.getElementById(counterId).textContent = "0 visits";
-    }
-  }
-
-  // Inicializar contadores al cargar la página
-  for (const [counterId, key] of Object.entries(counters)) {
-    updateCounter(counterId, key);
-  }
-
-  // Click en botones de boletines
-  document.querySelectorAll(".bulletin-btn").forEach(btn => {
-    btn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      const href = btn.href;
-
-      if (btn.id.startsWith("bulletin1")) await updateCounter("bulletin1-counter", "bulletin1");
-      if (btn.id.startsWith("bulletin2")) await updateCounter("bulletin2-counter", "bulletin2");
-
-      // Navegar tras actualizar
-      setTimeout(() => { window.location.href = href; }, 150);
-    });
-  });
-
-  // Click en navbar hacia boletines
-  document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", async (e) => {
-      e.preventDefault();
-      const href = link.href;
-
-      if (href.includes("bulletin1.html")) await updateCounter("bulletin1-counter", "bulletin1");
-      if (href.includes("bulletin2.html")) await updateCounter("bulletin2-counter", "bulletin2");
-
-      setTimeout(() => { window.location.href = href; }, 150);
-    });
-  });
 });
 </script>
 
